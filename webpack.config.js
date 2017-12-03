@@ -1,20 +1,75 @@
-const path = require('path');
+const webpack           = require('webpack');
+const path              = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const merge             = require('webpack-merge');
+
+const pug               = require('./tasks/pug');
+const devserver         = require('./tasks/devserver');
+const sass              = require('./tasks/sass');
+const uglify            = require('./tasks/uglify');
+const jsLint            = require('./tasks/js.lint');
+const sassLint          = require('./tasks/sass.lint');
+const img               = require('./tasks/img');
+// const favicon           = require('./tasks/favicon');
 
 const PATHS = {
-    source: path.join(__dirname, 'source'),
-    build: path.join(__dirname, 'build')
+  source: path.join(__dirname, 'assets'),
+  build: path.join(__dirname, 'build'),
 };
 
-module.exports = {
-    entry: PATHS.source + '/index.js',
+const common = merge([
+  {
+    entry: {
+      'index': PATHS.source + '/views/index/index.js',
+      'blog': PATHS.source + '/views/blog/blog.js',
+    },
     output: {
-        path: PATHS.build,
-        filename: '[name].js'
+      path: PATHS.build,
+      filename: './js/[name].js',
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            title: 'Webpack app'
-        })
-    ]
+      new HtmlWebpackPlugin({
+        filename: 'index.html',
+        chunks: ['index', 'common'],
+        template: PATHS.source + '/views/index/index.pug',
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'blog.html',
+        chunks: ['blog', 'common'],
+        template: PATHS.source + '/views/blog/blog.pug',
+      }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'common',
+      }),
+    ],
+  },
+  pug(),
+  sass(),
+  jsLint({paths: PATHS.source}),
+  sassLint(),
+  img(),
+]);
+
+module.exports = function (env) {
+  if (env === 'prod') {
+    console.log('RUN PRODUCTION');
+
+    return merge([
+      common,
+      uglify({useSourceMap: true}),
+      // favicon()
+    ]);
+  }
+
+  if (env === 'dev') {
+    console.log('RUN DEVELOPMENT');
+
+    return merge([
+      common,
+      devserver(),
+    ]);
+  }
+
 };
+
+// hot module replacement
