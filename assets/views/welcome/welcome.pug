@@ -1,6 +1,24 @@
-extends ../base
-
-block title
-    | Welcome page
-block content
-    h1 page welcome-pug
+doctype html
+html
+    head
+        meta(charset = 'utf-8')
+        meta(name = 'viewport', content = 'initial-scale=1.0,width=device-width')
+        title Добро пожаловать
+    body
+        .intro
+            .intro__form
+                form.form
+                    .form__body.form__body--green
+                        h4.form__title.title.title--white Авторизуйтесь
+                        .form__row
+                            .form__label
+                                .form__label-icon
+                                input(name='login' type='text' placeholder='Логин' data-required).form__label-input
+                        .form__row
+                            .form__label
+                                .form__label-icon
+                                input(name='password' type='password' placeholder='Пароль' data-required).form__label-input
+                    .form__btns
+                        button.btn.btn--form.btn--green На главную
+                        button.btn.btn--form.btn--green Войти
+            .intro__footer &copy; Феер Александр | создано с любовью в Loftschool | 2017

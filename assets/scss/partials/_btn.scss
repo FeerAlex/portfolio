@@ -1,0 +1,31 @@
+.btn {
+  border: none;
+  outline: none;
+  height: rem(45px);
+  color: $white;
+  cursor: pointer;
+  @include transitio();
+  font-family: 'Roboto Medium';
+
+  &--form {
+    flex: 1;
+    border-left: rem(1px) solid rgba($gray, .5);
+    border-right: rem(1px) solid rgba($gray, .5);
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  &--green {
+    background-color: $lightgreen;
+  }
+
+  &:hover {
+    background-color: $green;
+  }
+}

@@ -1,0 +1,50 @@
+.form {
+  border-radius: rem(5px);
+  overflow: hidden;
+  width: 380px;
+  text-align: center;
+
+  &__body {
+    padding: rem(20px);
+
+    &--green {
+      background-color: rgba($darkgreen, .6);
+    }
+  }
+
+  &__row {
+    margin-bottom: rem(20px);
+  }
+
+  &__label {
+    height: rem(45px);
+    display: flex;
+    width: 100%;
+    border-radius: rem(45px);
+    overflow: hidden;
+    position: relative;
+
+    &-icon {
+      width: rem(45px);
+      height: rem(45px);
+      background-color: $gray;
+      position: relative;
+    }
+
+    &-input {
+      border: none;
+      outline: none;
+      flex: 1 1 auto;
+      padding: 0 rem(18px);
+
+      @include placeholder {
+        color: rgba($darkolive, .5);
+        font-family: 'Roboto';
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+  }
+}

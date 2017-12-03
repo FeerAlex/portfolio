@@ -1,1 +1,21 @@
 @import "../../scss/main";
+
+.intro {
+  height: 100%;
+  background-image: url('../../img/bg.jpg');
+  @include cover();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__footer {
+    color: $white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Roboto';
+  }
+}
