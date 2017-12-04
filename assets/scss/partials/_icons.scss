@@ -1,0 +1,29 @@
+.icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+
+  &-vk {
+    background: transparent url('../../img/icons/vk.svg') no-repeat;
+  }
+
+  &-gh {
+    background: transparent url('../../img/icons/github.svg') no-repeat;
+  }
+
+  &-skype {
+    background: transparent url('../../img/icons/skype.svg') no-repeat;
+  }
+
+  &-in {
+    background: transparent url('../../img/icons/in.svg') no-repeat;
+  }
+
+  &-login {
+    background: transparent url('../../img/icons/login.svg') no-repeat;
+  }
+
+  &-password {
+    background: transparent url('../../img/icons/password.svg') no-repeat;
+  }
+}

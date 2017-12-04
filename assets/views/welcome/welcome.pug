@@ -11,13 +11,15 @@ html
                     .form__body.form__body--green
                         h4.form__title.title.title--white Авторизуйтесь
                         .form__row
-                            .form__label
+                            label.form__label
                                 .form__label-icon
-                                input(name='login' type='text' placeholder='Логин' data-required).form__label-input
+                                    span.icon.icon-login
+                                input(name='login' type='text' placeholder='Логин' id="login").form__label-input
                         .form__row
-                            .form__label
+                            label.form__label
                                 .form__label-icon
-                                input(name='password' type='password' placeholder='Пароль' data-required).form__label-input
+                                    span.icon.icon-password
+                                input(name='password' type='password' placeholder='Пароль' id="password").form__label-input
                     .form__btns
                         button.btn.btn--form.btn--green На главную
                         button.btn.btn--form.btn--green Войти

@@ -29,6 +29,14 @@
       height: rem(45px);
       background-color: $gray;
       position: relative;
+      cursor: pointer;
+
+      .icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+      }
     }
 
     &-input {

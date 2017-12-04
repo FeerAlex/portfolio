@@ -1,16 +1,18 @@
-const webpack           = require('webpack');
-const path              = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const merge             = require('webpack-merge');
+const webpack             = require('webpack');
+const path                = require('path');
+const HtmlWebpackPlugin   = require('html-webpack-plugin');
+const merge               = require('webpack-merge');
 
-const pug               = require('./tasks/pug');
-const devserver         = require('./tasks/devserver');
-const sass              = require('./tasks/sass');
-const uglify            = require('./tasks/uglify');
-const jsLint            = require('./tasks/js.lint');
-const sassLint          = require('./tasks/sass.lint');
-const img               = require('./tasks/img');
+const pug                 = require('./tasks/pug');
+const devserver           = require('./tasks/devserver');
+const sass                = require('./tasks/sass');
+const uglify              = require('./tasks/uglify');
+const jsLint              = require('./tasks/js.lint');
+const sassLint            = require('./tasks/sass.lint');
+const img                 = require('./tasks/img');
 // const favicon           = require('./tasks/favicon');
+const SpriteLoaderPlugin  = require('svg-sprite-loader/plugin');
+const svg                 = require('./tasks/svg');
 
 const PATHS = {
   source: path.join(__dirname, 'assets'),
@@ -53,6 +55,7 @@ const common = merge([
       new webpack.optimize.CommonsChunkPlugin({
         name: 'common',
       }),
+      new SpriteLoaderPlugin(),
     ],
   },
   pug(),
@@ -60,6 +63,7 @@ const common = merge([
   jsLint({paths: PATHS.source}),
   sassLint(),
   img(),
+  svg(),
 ]);
 
 module.exports = function (env) {
