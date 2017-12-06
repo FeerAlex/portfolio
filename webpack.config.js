@@ -10,9 +10,9 @@ const uglify              = require('./tasks/uglify');
 const jsLint              = require('./tasks/js.lint');
 const sassLint            = require('./tasks/sass.lint');
 const img                 = require('./tasks/img');
-// const favicon           = require('./tasks/favicon');
-const SpriteLoaderPlugin  = require('svg-sprite-loader/plugin');
+const favicon             = require('./tasks/favicon');
 const svg                 = require('./tasks/svg');
+const fonts               = require('./tasks/fonts');
 
 const PATHS = {
   source: path.join(__dirname, 'assets'),
@@ -55,15 +55,15 @@ const common = merge([
       new webpack.optimize.CommonsChunkPlugin({
         name: 'common',
       }),
-      new SpriteLoaderPlugin(),
     ],
   },
-  pug(),
-  sass(),
-  jsLint({paths: PATHS.source}),
-  sassLint(),
-  img(),
-  svg(),
+  pug(),                            /* Компиляция pug файлов в html файлы*/
+  sass(),                           /* Компиляция sass файлов в css файлы */
+  jsLint({paths: PATHS.source}),    /* Линтинг javascript файлов */
+  sassLint(),                       /* Линтинг scss файлов */
+  img(),                            /* Копирование изображений */
+  svg(),                            /* Обработка svg файлов и генерация svg спрайта*/
+  fonts(),                          /* Генерация шрифтов и запись font-face в css */
 ]);
 
 module.exports = function (env) {
@@ -73,7 +73,7 @@ module.exports = function (env) {
     return merge([
       common,
       uglify({useSourceMap: true}),
-      // favicon()
+      favicon()
     ]);
   }
 

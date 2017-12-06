@@ -1,15 +1,24 @@
-module.exports = function (paths) {
+module.exports = function () {
   return {
     module: {
       rules: [
         {
           test: /\.svg$/,
-          loader: 'svg-sprite-loader',
-          include: paths,
-          options: {
-            extract: true,
-            spriteFilename: 'images/icons-sprite.svg',
-          },
+          use: [
+            {
+              loader: 'svg-sprite-loader'
+            },
+            {
+              loader: 'svgo-loader',
+              options: {
+                plugins: [
+                  { removeNonInheritableGroupAttrs: true },
+                  { collapseGroups: true },
+                  { removeAttrs: { attrs: '(fill|stroke)' } },
+                ],
+              },
+            },
+          ],
         },
       ],
     },

@@ -7,8 +7,8 @@
   @include transitio();
   font-family: 'Roboto Medium';
 
-  &--form {
-    flex: 1;
+  &--card {
+    flex: 1 1 auto;
     border-left: rem(1px) solid rgba($gray, .5);
     border-right: rem(1px) solid rgba($gray, .5);
 
@@ -21,11 +21,24 @@
     }
   }
 
+  &--transparent {
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid $white;
+    padding: rem(10px) rem(27px);
+    border-radius: rem(45px);
+
+    &.btn:hover {
+      border-color: lighten($lightgreen, 10%);
+      background-color: $lightgreen;
+    }
+  }
+
   &--green {
-    background-color: $lightgreen;
+    background-color: rgba($lightgreen, .85);
   }
 
   &:hover {
-    background-color: $green;
+    background-color: rgba($green, .85);
   }
 }

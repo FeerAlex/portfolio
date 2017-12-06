@@ -9,13 +9,115 @@
   align-items: center;
   justify-content: center;
 
+  &__btn {
+    position: absolute;
+    top: rem(20px);
+    right: rem(20px);
+  }
+  
+  &__card {
+    position: relative;
+    width: rem(380px);
+    height: rem(426px);
+    //height: rem(395px);
+    transform-style: preserve-3d;
+    @include transitio();
+
+    &--show {
+      transform: rotateY(180deg);
+    }
+  }
+
   &__footer {
     color: $white;
     position: absolute;
-    bottom: 0;
+    bottom: rem(38px);
     left: 0;
     right: 0;
     text-align: center;
     font-family: 'Roboto';
+    letter-spacing: rem(-0.1px);
+  }
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: rgba($darkgreen, .6);
+  border-radius: rem(5px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: $white;
+  font-family: 'Roboto';
+  text-align: center;
+
+  &--front {
+    z-index: 1;
+  }
+
+  &--back {
+    transform: rotateY(180deg);
+  }
+
+  &__photo {
+    @include circle(rem(141px), $white);
+    overflow: hidden;
+    margin-bottom: rem(11px);
+  }
+
+  &__image {
+    background-image: url("../../img/user.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__user-name {
+    font-size: rem(28px);
+    font-weight: 500;
+    margin-bottom: rem(2px);
+  }
+
+  &__desc {
+    margin-bottom: rem(33px);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: rem(40px) rem(20px) 0 rem(20px);
+  }
+
+  &__btns {
+    display: flex;
+  }
+}
+
+.socials {
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    margin-left: rem(25px);
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
   }
 }

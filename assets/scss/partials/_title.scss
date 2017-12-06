@@ -1,5 +1,5 @@
 .title {
-  font-size: rem(35px);
+  font-size: rem(63px);
   text-transform: uppercase;
   font-family: 'Sansus Webissimo';
   position: relative;
@@ -16,6 +16,10 @@
     right: 0;
     bottom: 0;
     margin: auto;
+  }
+
+  &--middle {
+    font-size: rem(35px);
   }
 
   &--white {

@@ -3,27 +3,26 @@
   width: 15px;
   height: 15px;
 
-  &-vk {
-    background: transparent url('../../img/icons/vk.svg') no-repeat;
+  &-soc {
+    width: 30px;
+    height: 22px;
+    fill: $white;
+    @include transitio();
+
+    &:hover {
+      fill: $lightgreen;
+    }
   }
 
-  &-gh {
-    background: transparent url('../../img/icons/github.svg') no-repeat;
-  }
+  &-vk {}
 
-  &-skype {
-    background: transparent url('../../img/icons/skype.svg') no-repeat;
-  }
+  &-gh {}
 
-  &-in {
-    background: transparent url('../../img/icons/in.svg') no-repeat;
-  }
+  &-skype {}
 
-  &-login {
-    background: transparent url('../../img/icons/login.svg') no-repeat;
-  }
+  &-in {}
 
-  &-password {
-    background: transparent url('../../img/icons/password.svg') no-repeat;
-  }
+  &-login {}
+
+  &-password {}
 }
