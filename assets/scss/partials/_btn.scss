@@ -5,12 +5,14 @@
   color: $white;
   cursor: pointer;
   @include transitio();
-  font-family: 'Roboto Medium';
+  font-weight: 500;
 
   &--card {
     flex: 1 1 auto;
     border-left: rem(1px) solid rgba($gray, .5);
     border-right: rem(1px) solid rgba($gray, .5);
+    font-family: 'Roboto Medium';
+    font-weight: 500;
 
     &:first-child {
       border-left: none;
@@ -27,6 +29,8 @@
     border: 1px solid $white;
     padding: rem(10px) rem(27px);
     border-radius: rem(45px);
+    font-family: 'Roboto Medium';
+    font-weight: 500;
 
     &.btn:hover {
       border-color: lighten($lightgreen, 10%);

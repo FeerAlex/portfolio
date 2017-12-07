@@ -1,5 +1,63 @@
 @import "../../scss/main";
 
-h1 {
-  color: $olive;
+.intro {
+  height: 100%;
+  background-image: url('../../img/bg.jpg');
+  @include cover();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__btn {
+    position: absolute;
+    top: rem(20px);
+    right: rem(20px);
+  }
+  
+  &__card {
+    position: relative;
+    width: rem(380px);
+    height: rem(426px);
+    //height: rem(395px);
+    transform-style: preserve-3d;
+    @include transitio();
+
+    &--show {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__footer {
+    color: $white;
+    position: absolute;
+    bottom: rem(38px);
+    left: 0;
+    right: 0;
+    text-align: center;
+    letter-spacing: rem(-0.1px);
+  }
+}
+
+.socials {
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    margin-left: rem(25px);
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+  }
 }

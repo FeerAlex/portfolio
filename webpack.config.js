@@ -22,9 +22,9 @@ const PATHS = {
 const common = merge([
   {
     entry: {
-      'index': PATHS.source + '/views/index/index.js',
+      'about': PATHS.source + '/views/about/about.js',
       'blog': PATHS.source + '/views/blog/blog.js',
-      'welcome': PATHS.source + '/views/welcome/welcome.js',
+      'index': PATHS.source + '/views/index/index.js',
       'works': PATHS.source + '/views/works/works.js',
     },
     output: {
@@ -33,9 +33,9 @@ const common = merge([
     },
     plugins: [
       new HtmlWebpackPlugin({
-        filename: 'index.html',
-        chunks: ['index', 'common'],
-        template: PATHS.source + '/views/index/index.pug',
+        filename: 'about.html',
+        chunks: ['about', 'common'],
+        template: PATHS.source + '/views/about/about.pug',
       }),
       new HtmlWebpackPlugin({
         filename: 'blog.html',
@@ -43,9 +43,9 @@ const common = merge([
         template: PATHS.source + '/views/blog/blog.pug',
       }),
       new HtmlWebpackPlugin({
-        filename: 'welcome.html',
-        chunks: ['welcome', 'common'],
-        template: PATHS.source + '/views/welcome/welcome.pug',
+        filename: 'index.html',
+        chunks: ['index', 'common'],
+        template: PATHS.source + '/views/index/index.pug',
       }),
       new HtmlWebpackPlugin({
         filename: 'works.html',
