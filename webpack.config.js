@@ -61,12 +61,13 @@ const common = merge([
   sass(),                           /* Компиляция sass файлов в css файлы */
   jsLint({paths: PATHS.source}),    /* Линтинг javascript файлов */
   sassLint(),                       /* Линтинг scss файлов */
-  img(),                            /* Копирование изображений */
+  img(),                            /* Копирование и оптимизация изображений */
   svg(),                            /* Обработка svg файлов и генерация svg спрайта*/
   fonts(),                          /* Генерация шрифтов и запись font-face в css */
 ]);
 
 module.exports = function (env) {
+
   if (env === 'prod') {
     console.log('RUN PRODUCTION');
 

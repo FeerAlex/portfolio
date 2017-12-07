@@ -33,7 +33,7 @@ html
                         button.btn.btn--card.btn--green Блог
                 .card.card--back
                     form.card__tag-form
-                        .card__content
+                        .card__content.card__content--form
                             h4.card__title.title.title--middle.title--white Авторизуйтесь
                             label.card__label
                                 input(name='login' type='text' placeholder='Логин' id="login").card__label-input
@@ -45,25 +45,24 @@ html
                                 .card__label-icon
                                     svg.icon.icon-password
                                         use(xlink:href="#password")
-                            label.controls-label
-                                input(type="checkbox" name="human" hidden).controls-input
-                                span.controls-fake.controls-fake--checkbox
+                            label.card__label.card__label--checkbox
+                                input(type="checkbox" name="human" hidden).card__label-input
+                                span.card__label-fake.card__label-fake--checkbox
                                     svg.icon.icon-check
                                         use(xlink:href="#check")
-                                span.controls-text Я человек
-                            .card__controls.controls
-                                span.controls-title Вы точно не робот?
-                                label.controls-label.controls-label--radio
-                                    input(type="radio" name="sure" hidden).controls-input
-                                    span.controls-fake.controls-fake--radio
-                                    span.controls-text Да
-                                label.controls-label.controls-label--radio
-                                    input(type="radio" name="sure" checked hidden).controls-input
-                                    span.controls-fake.controls-fake--radio
-                                    span.controls-text Не уверен
-                        .card__btns
+                                span.card__label-text Я человек
+                            .card__radios
+                                span.card__radios-title Вы точно не робот?
+                                label.card__label.card__label--radio
+                                    input(type="radio" name="sure" hidden).card__label-input
+                                    span.card__label-fake.card__label-fake--radio
+                                    span.card__label-text Да
+                                label.card__label.card__label--radio
+                                    input(type="radio" name="sure" checked hidden).card__label-input
+                                    span.card__label-fake.card__label-fake--radio
+                                    span.card__label-text Не уверен
+                        .card__btns.card__btns--half
                             button.btn.btn--card.btn--green#front На главную
                             button.btn.btn--card.btn--green Войти
-
             a.intro__btn.btn.btn--transparent#front_btn Авторизоваться
             .intro__footer &copy; Феер Александр | создано с любовью в Loftschool | 2017
