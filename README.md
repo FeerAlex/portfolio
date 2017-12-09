@@ -47,38 +47,38 @@
 
 ## Используемые плагины
 * [Clean for WebPack](https://github.com/johnagan/clean-webpack-plugin)
->>> Удаление папки с готовым проектом
+    > Удаление папки с готовым проектом
 * [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin)
->>> Генерация html файла с уже подключенным скриптом
+> Генерация html файла с уже подключенным скриптом
 * [Extract Text Plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin)
->>> Подключение css файлов
+> Подключение css файлов
 * [Optimize CSS Assets Webpack Plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin)
->>> Оптимизация css файлов
+> Оптимизация css файлов
 * [Stylelint Plugin for Webpack](https://github.com/JaKXz/stylelint-webpack-plugin)
->>> Проверка css файлов на соответсвие, принятому в команде, стилю кода
+> Проверка css файлов на соответсвие, принятому в команде, стилю кода
 * [UglifyJS Webpack Plugin](https://github.com/webpack-contrib/uglifyjs-webpack-plugin)
->>> Оптимизация js файлов
+> Оптимизация js файлов
 * [Favicons Webpack Plugin](https://github.com/jantimon/favicons-webpack-plugin)
->>> Генерация favicon для различных устройств
+> Генерация favicon для различных устройств
 
 ## Используемые лоадеры
 * [Pug-loader](https://github.com/pugjs/pug-loader)
->>> Компиляция pug файлов в html
+> Компиляция pug файлов в html
 * [Sass-loader](https://github.com/webpack-contrib/sass-loader)
->>> Компиляция scss файлов в css
+> Компиляция scss файлов в css
 * [Eslint-loader](https://github.com/MoOx/eslint-loader)
->>> Проверка js файлов на соответсвие, принятому в команде, стилю кода
+> Проверка js файлов на соответсвие, принятому в команде, стилю кода
 * [Babel-loader](https://github.com/babel/babel-loader)
->>> Компиляция es6 в es5
+> Компиляция es6 в es5
 * [Img-loader](https://github.com/thetalecrafter/img-loader)
->>> Оптимизация изображений
+> Оптимизация изображений
 * [Svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)
->>> Генерация svg-спрайта
+> Генерация svg-спрайта
 * [Svgo-loader](https://github.com/rpominov/svgo-loader)
->>> Оптимизация svg
+> Оптимизация svg
 * [Fontface-loader](https://github.com/sjorssnoeren/fontface-loader)
->>> Генерация шрифтов
+> Генерация шрифтов
 * [File-loader](https://github.com/webpack-contrib/file-loader)
->>> Загрузка и парсинг файлов
+> Загрузка и парсинг файлов
 * [Css-loader](https://github.com/webpack-contrib/css-loader)
->>> Загрузка и парсинг css файлов
+> Загрузка и парсинг css файлов
