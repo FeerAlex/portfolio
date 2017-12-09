@@ -5,14 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --env dev",
-    "build": "npm run clean && webpack --env prod",
-    "serv": "static build",
-    "clean": "rimraf ./build"
+    "build": "webpack --env prod",
+    "serv": "static build"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
+    "cssnano": "^3.10.0",
     "eslint": "^4.12.1",
     "eslint-loader": "^1.9.0",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -23,6 +26,7 @@
     "img-loader": "^2.0.0",
     "node-sass": "^4.7.2",
     "node-static": "^0.7.10",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
     "path": "^0.12.7",
     "pug": "^2.0.0-rc.4",
     "pug-loader": "^2.3.0",
@@ -33,11 +37,13 @@
     "svg-sprite-loader": "^3.4.1",
     "svgo": "^1.0.0",
     "svgo-loader": "^2.1.0",
+    "uglifyjs-webpack-plugin": "1.0.0-beta.2",
     "webpack": "^3.9.1",
     "webpack-dev-server": "^2.9.5",
     "webpack-merge": "^4.1.1"
   },
   "dependencies": {
+    "jquery": "^3.2.1",
     "normalize.css": "^7.0.0"
   }
 }
