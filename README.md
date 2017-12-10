@@ -82,3 +82,5 @@
     > Загрузка и парсинг файлов
 * [Css-loader](https://github.com/webpack-contrib/css-loader)
     > Загрузка и парсинг css файлов
+* [Postcss-loader](https://github.com/postcss/postcss-loader)
+    > Необходим для подключения autoprefixer
