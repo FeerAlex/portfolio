@@ -1,11 +1,11 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "A webpack project",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --env dev",
-    "build": "webpack --env prod",
+    "start": "cross-env NODE_ENV=dev webpack-dev-server",
+    "build": "cross-env NODE_ENV=prod webpack",
     "serv": "static build"
   },
   "author": "",
@@ -15,6 +15,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "clean-webpack-plugin": "^0.1.17",
+    "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
     "eslint": "^4.12.1",
