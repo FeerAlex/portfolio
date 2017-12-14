@@ -1,0 +1,38 @@
+@import "../../scss/main";
+
+.footer {
+    color: $white;
+    font-family: 'Roboto Light';
+    font-weight: 300;
+
+    &__content {
+        background-color: rgba($darkolive, .85);
+        display: flex;
+        padding: rem(30px) 0;
+    }
+
+    &__col {
+        flex: 1;
+        border-left: 1px solid rgba($white, .2);
+        padding: 0 rem(30px);
+
+        &:first-child {
+            border-left: none;
+        }
+    }
+
+    &__copy {
+        background-color: rgba($lightgreen, .85);
+        text-align: center;
+        padding: rem(10px);
+    }
+
+    &__quote {
+        font-style: italic;
+        opacity: .5;
+
+        &-author {
+            font-weight: 700;
+        }
+    }
+}
