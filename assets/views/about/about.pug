@@ -3,5 +3,66 @@ extends ../base
 block title
     | About page
 block content
-    h1 page about-pug
-    #footer
+    .about
+        .about__left
+            svg(viewBox="0 0 1200 108" preserveAspectRatio="none").about__triangle.about__triangle--left
+                use(xlink:href="#about_bg_left")
+            .about__left-content
+                .about__title
+                    .about__title-wrapper
+                        svg.about__title-bg
+                            use(xlink:href="#about_header")
+                        h1.about__title-text.title Обо мне
+                .about__content
+                    .about__image
+                        img(src=require("../../img/big-user.jpg")).about__avatar
+                    .about__subtitle
+                        h2.title.title--middle Кто я
+                    .about__desc
+                        p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                        p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+        .about__right
+            svg(viewBox="0 0 900.331 1009.986" preserveAspectRatio="none").about__triangle.about__triangle--right
+                use(xlink:href="#about_bg_right")
+            .about__right-content
+                .about__subtitle
+                    h2.title.title--middle Чем я могу быть вам полезен
+                .about__useful
+                    p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                .about__skills.skills
+                    ul.skills__list
+                        each item, n in ['Frontend', 'Backend', 'WorkFlow']
+                            li.skills__item
+                                .skills__row
+                                    .skills__row-title #{item}
+                                    ul.skills__row-list
+                                        each skill, i in ['Html5', 'css3', 'JavaScript & jQuery']
+                                            li.skills__row-item
+                                                .circular(data-percent=`${(i + n + 5) * 10}`)
+                                                    svg.circular__svg
+                                                    span.circular__span #{skill}
+    .map
+        .map__contacts
+            .contacts
+                h2.contacts__title.title.title--middle Контакты
+                ul.contacts__list
+                    li.contacts__item
+                        a(href="skype:junyxiz_alpha?call").contacts__link
+                            svg.contacts__icon.contacts__icon--sk
+                                use(xlink:href="#skype")
+                            span.contacts__span junyxiz_alpha
+                    li.contacts__item
+                        a(href="skype:junyxiz_alpha?call").contacts__link
+                            svg.contacts__icon.contacts__icon--email
+                                use(xlink:href="#email")
+                            span.contacts__span pertik@list.ru
+                    li.contacts__item
+                        a(href="tel:89876610471").contacts__link
+                            svg.contacts__icon.contacts__icon--tel
+                                use(xlink:href="#phone")
+                            span.contacts__span +7 987 661 04 71
+                    li.contacts__item
+                        a(href="skype:junyxiz_alpha?call").contacts__link
+                            svg.contacts__icon.contacts__icon--marker
+                                use(xlink:href="#map-marker")
+                            span.contacts__span Чебоксары, ул. Калинина

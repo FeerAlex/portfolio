@@ -155,6 +155,7 @@ module.exports = {
               plugins: [
                 { removeNonInheritableGroupAttrs: true },
                 { collapseGroups: true },
+                // { removeViewBox: true},
                 { removeAttrs: { attrs: '(fill|stroke)' } },
               ],
             },

@@ -1,4 +1,5 @@
 $white: #fff;
+$green: #6c9c5a;
 
 .socials {
 
@@ -21,16 +22,29 @@ $white: #fff;
     &__link {
         display: inline-block;
     }
+
+    .icon {
+        fill: rgba($white, .5);
+    
+        &:hover {
+            fill: $white;
+        }
+    }
+
+    &--green {
+        .icon {
+            fill: $white;
+
+            &:hover {
+                fill: $green;
+            }
+        }
+    }
 }
 
 .icon {
     display: inline-block;
-    fill: rgba($white, .5);
     transition: all .3s ease;
-
-    &:hover {
-      fill: $white;
-    }
 
     &--vk {
         width: 31px;

@@ -1,0 +1,30 @@
+$white: #fff;
+
+.user {
+    text-align: center;
+    color: $white;
+
+    &__photo {
+        width: 141px;
+        height: 141px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    &__avatar {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    &__name {
+        font-family: 'Roboto Medium';
+        font-size: 35px;
+        font-weight: 500;
+    }
+
+    &__desc {
+        font-family: 'Roboto';
+        font-weight: 400;
+    }
+}

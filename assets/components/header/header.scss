@@ -1,0 +1,52 @@
+$white: #fff;
+
+.header {
+    background: url("../../img/bg.jpg");
+    background-size: cover;
+    height: 620px;
+    position: relative;
+
+    &__socials {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+    }
+
+    &__user {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    &__burger {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+
+        &-icon {
+            fill: $white;
+            width: 40px;
+            height: 35px;
+        }
+    }
+
+    &__arrow {
+        fill: $white;
+        position: absolute;
+        z-index: 2;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &-link {
+            display: inline-block;
+        }
+
+        &-icon {
+            fill: rgba($white, .7);
+            width: 26px;
+            height: 16px;
+        }
+    }
+}

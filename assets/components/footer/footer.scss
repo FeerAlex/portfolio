@@ -1,9 +1,29 @@
-@import "../../scss/main";
+$lightgreen:    #6c9c5a;
+$green:         #4e8839;
+$olive:         #566358;
+$darkolive:     #373e42;
+
+$darkgreen:     #122620;
+$greentext:     #455a64;
+$gray:          #f0efe9;
+$lightgay:      #c4cbcd;
+$red:           #e44845;
+
+$white:         #ffffff;
+$black:         #000000;
+
+@function rem($size: 16px) {
+    @return ($size / 16px) + rem;
+}
 
 .footer {
     color: $white;
     font-family: 'Roboto Light';
     font-weight: 300;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 
     &__content {
         background-color: rgba($darkolive, .85);
@@ -24,7 +44,7 @@
     &__copy {
         background-color: rgba($lightgreen, .85);
         text-align: center;
-        padding: rem(10px);
+        padding: rem(7.5px);
     }
 
     &__quote {
