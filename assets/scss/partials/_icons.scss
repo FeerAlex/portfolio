@@ -1,28 +1,16 @@
-.icon {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
+// .icon {
+  // display: inline-block;
+  // width: 15px;
+  // height: 15px;
 
-  &-soc {
-    width: 30px;
-    height: 22px;
-    fill: $white;
-    @include transitio();
+  // &-soc {
+  //   width: 30px;
+  //   height: 22px;
+  //   fill: $white;
+  //   @include transitio();
 
-    &:hover {
-      fill: $lightgreen;
-    }
-  }
-
-  &-vk {}
-
-  &-gh {}
-
-  &-skype {}
-
-  &-in {}
-
-  &-login {}
-
-  &-password {}
-}
+  //   &:hover {
+  //     fill: $lightgreen;
+  //   }
+  // }
+// }
