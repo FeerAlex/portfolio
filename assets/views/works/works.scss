@@ -327,6 +327,10 @@ $post:          #373e42;
         border: none;
         outline: none;
         margin-bottom: 20px;
+
+        @include placeholder {
+            color: $comment;
+        }
     }
 
     &__textarea {
@@ -351,6 +355,23 @@ $post:          #373e42;
         border: none;
         outline: none;
         color: #fff;
+        font-family: 'Roboto Medium';
+        font-weight: 500;
+        cursor: pointer;
+
+        border-left: 1px solid rgba(#dee3e7, .5);
+        border-right: 1px solid rgba(#dee3e7, .5);
+
+        flex: 1 1 0;
+        transition: all 0.2s ease-in-out;
+
+        &:first-child {
+            border-left: none;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
 
         &:hover {
             background-color: #649551;
