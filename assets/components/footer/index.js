@@ -2,6 +2,7 @@
 
 import '../../fonts/Roboto-Light.ttf';
 import '../../fonts/Roboto-LightItalic.ttf';
+import '../../fonts/Roboto-Medium.ttf';
 import './footer.scss';
 import template from './footer.pug';
 

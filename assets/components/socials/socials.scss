@@ -40,6 +40,14 @@ $green: #6c9c5a;
             }
         }
     }
+
+    &--opacity-green {
+        .icon {
+            &:hover {
+                fill: $green;
+            }
+        }
+    }
 }
 
 .icon {

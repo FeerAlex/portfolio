@@ -55,4 +55,34 @@ $black:         #000000;
             font-weight: 700;
         }
     }
+
+    &__nav {
+        margin-bottom: 25px;
+        margin-top: -6px;
+    }
+}
+
+.nav {
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__item {
+        display: inline-block;
+        margin-left: 6.5%;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    &__link {
+        color: $white;
+        text-decoration: none;
+        font-family: 'Roboto Medium';
+        font-weight: 500;
+    }
 }

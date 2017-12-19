@@ -27,4 +27,11 @@ $white: #fff;
         font-family: 'Roboto';
         font-weight: 400;
     }
+
+    &--intro {
+
+        .user__name {
+            font-size: 28px;
+        }
+    }
 }

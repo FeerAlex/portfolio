@@ -1,7 +1,8 @@
 extends ../base
 
-block title
-    | Index page
+block variables
+    - var title = 'Блог'
+
 block content
     .blog
         svg(viewBox="0 0 1200 108" preserveAspectRatio="none").blog__triangle

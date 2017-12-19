@@ -1,11 +1,17 @@
 'use strict';
 
 import './header.scss';
+
 import template from './header.pug';
+
+/* COMPONENTS */
 import Social from '../../components/socials';
 import User from '../../components/user';
+
+/* ICONS */
 import '../../img/icons/arrow_down.svg';
 import '../../img/icons/hamburger.svg';
+import '../../img/icons/portfolio_header.svg';
 
 let social = new Social();
 let user = new User();

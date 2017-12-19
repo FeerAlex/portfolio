@@ -12,6 +12,7 @@ import '../../fonts/Sansus-Webissimo-Regular.ttf';
 
 /* ICONS */
 import '../../img/icons/bg.svg';
+import '../../img/icons/blog_header.svg';
 
 let header = new Header();
 let footer = new Footer();

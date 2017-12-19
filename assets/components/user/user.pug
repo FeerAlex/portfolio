@@ -1,4 +1,12 @@
+- var title = document.title
 .user__photo
     img(src=require("../../img/user.jpg")).user__avatar
-h2.user__name Феер Александр
-p.user__desc Личный сайт веб разработчика
+if title != 'Блог'
+    h2.user__name Феер Александр
+    p.user__desc Личный сайт веб разработчика
+else
+    .blog__title
+        svg.blog__title-bg
+            use(xlink:href="#blog_header")
+        h1.blog__title-text.title.title--white= title
+    p.user__desc Статьи, которые я написал

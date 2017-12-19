@@ -10,6 +10,7 @@ $white: #fff;
         position: absolute;
         top: 30px;
         left: 30px;
+        z-index: 2;
     }
 
     &__user {
@@ -18,12 +19,14 @@ $white: #fff;
         left: 50%;
         transform: translate(-50%,-50%);
         margin-top: -40px;
+        z-index: 2;
     }
 
     &__burger {
         position: absolute;
         top: 30px;
         right: 30px;
+        z-index: 2;
 
         &-icon {
             fill: $white;
@@ -49,5 +52,16 @@ $white: #fff;
             width: 26px;
             height: 16px;
         }
+    }
+
+    &__portfolio-icon {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+        height: 50%;
+        fill: $white;
+        opacity: .12;
     }
 }

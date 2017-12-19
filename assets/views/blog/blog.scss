@@ -10,6 +10,10 @@ $line:          #373e42; // o .07 h5
 
 .header {
   height: 445px;
+
+  &__user {
+    top: 60%;
+  }
 }
 
 .blog {
@@ -27,6 +31,34 @@ $line:          #373e42; // o .07 h5
     position: absolute;
     bottom: 100%;
     fill: $bgcolor;
+  }
+
+  &__title {
+    position: relative;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 122px;
+
+    @include desktops {
+      width: auto;
+    }
+
+    &-bg {
+      fill: $white;
+      opacity: .12;
+      margin: 0 auto;
+      display: block;
+      width: 303px;
+      height: 208px;
+    }
+
+    &-text {
+      position: absolute;
+      margin-top: -14px;
+      margin-left: -5px;
+    }
   }
 }
 
