@@ -9,6 +9,7 @@ import Footer from '../../components/footer';
 import '../../fonts/Roboto-Medium.ttf';
 import '../../fonts/Roboto-Italic.ttf';
 import '../../fonts/Roboto-BoldItalic.ttf';
+import '../../fonts/Sansus-Webissimo-Regular.ttf';
 
 /* ICONS */
 import '../../img/icons/works_header.svg';
