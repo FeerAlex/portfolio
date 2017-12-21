@@ -1,6 +1,78 @@
 extends ../base
 
-block title
-    | Works page
+block variables
+    - var title = 'Мои работы'
+
 block content
-    h1 page works-pug
+    .work
+        svg(viewBox="0 0 1200 108" preserveAspectRatio="none").work__triangle
+            use(xlink:href="#bg")
+        .work__title
+            .work__title-wrapper
+                svg.work__title-bg
+                    use(xlink:href="#works_header")
+                h1.work__title-text.title Мои работы
+        .work__slider
+            .slider
+                .slider__desc
+                    .slider__content
+                        h3.slider__title.title.title--middle Сайт школы онлайн образования
+                        .slider__skills HTML, CSS, JAVASCRIPT
+                        a(href="#0").slider__link
+                            svg.slider__link-icon
+                                use(xlink:href="#link")
+                            span.slider__link-span Посмотреть сайт
+                .slider__screen
+                    img(src=require("../../img/slider/site-1.png")).slider__screen-img
+                .slider__switch
+                    .slider__switch-col
+                        img(src=require("../../img/slider/site-2.jpg")).slider__switch-img
+                        a(href="#0").slider__switch-link.slider__switch-link--prev
+                            svg.slider__switch-icon
+                                use(xlink:href="#portf_arrow_down")
+                    .slider__switch-col
+                        img(src=require("../../img/slider/site-3.jpg")).slider__switch-img
+                        a(href="#0").slider__switch-link.slider__switch-link--next
+                            svg.slider__switch-icon
+                                use(xlink:href="#portf_arrow_up")
+    .rumors
+        .rumors__title.work__title-wrapper
+            svg.work__title-bg
+                use(xlink:href="#about_header")
+            h2.work__title-text.title Что обо мне говорят
+        .rumors__reviews.reviews
+            ul.reviews__list
+                li.reviews__item
+                    .reviews__image
+                        img(src=require("../../img/dmitri.png"), alt="").reviews__avatar
+                    .reviews__comment
+                        p.reviews__comment-text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                        svg.reviews__comment-icon
+                            use(xlink:href="#quote")
+                    .reviews__author
+                        span.reviews__author-name Ковальчук Дмитрий
+                        span.reviews__author-post &mdash; основатель Loftschool
+                li.reviews__item
+                    .reviews__image
+                        img(src=require("../../img/vladimir.png"), alt="").reviews__avatar
+                    .reviews__comment
+                        p.reviews__comment-text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                        svg.reviews__comment-icon
+                            use(xlink:href="#quote")
+                    .reviews__author
+                        span.reviews__author-name Сабанцев Владимир
+                        span.reviews__author-post &mdash; преподаватель
+        .rumors__form.form
+            form.form__tag
+                .form__body
+                    h2.form__title.title.title--middle связаться со мной
+                    input(placeholder="Имя").form__input
+                    input(placeholder="Email").form__input
+                    textarea(placeholder="Ваше сообщение").form__textarea
+                .form__controls
+                    button(type="submit").form__btn Отправить
+                    button(type="reset").form__btn Очистить
+        .rumors__arrow
+            a(href="#0").rumors__arrow-link
+                svg.rumors__arrow-icon
+                    use(xlink:href="#arrow_down")

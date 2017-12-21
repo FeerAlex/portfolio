@@ -1,5 +1,166 @@
 @import "../../scss/main";
 
-h1 {
-  color: red;
+$bgcolor:       #faf8f0;
+$green:         #4e8839;
+$border:        #6c9c5a;
+$title:         #455a64;
+$date:          #4e8839;
+$desc:          #455a64;
+$line:          #373e42; // o .07 h5
+
+.header {
+  height: 445px;
+
+  &__user {
+    top: 60%;
+  }
+}
+
+.blog {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  background-color: $bgcolor;
+  padding-bottom: 185px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  padding-top: 50px;
+
+  &__triangle {
+    position: absolute;
+    bottom: 100%;
+    fill: $bgcolor;
+  }
+
+  &__title {
+    position: relative;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 122px;
+
+    @include desktops {
+      width: auto;
+    }
+
+    &-bg {
+      fill: $white;
+      opacity: .12;
+      margin: 0 auto;
+      display: block;
+      width: 303px;
+      height: 208px;
+    }
+
+    &-text {
+      position: absolute;
+      margin-top: -14px;
+      margin-left: -5px;
+    }
+  }
+}
+
+.sidebar {
+  padding-top: 11px;
+  padding-right: 116px;
+  display: flex;
+  justify-content: flex-end;
+  width: 26.4%;
+  text-align: right;
+
+  &__list {
+    width: 75%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 12px;
+
+    &--active {
+      .sidebar__link {
+        font-weight: 700;
+        color: green;
+
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__link {
+    color: $desc;
+    text-decoration: none;
+    padding: 11px 17px 10px 0;
+    display: inline-block;
+    position: relative;
+
+    &:after {
+      content: '';
+      width: 3px;
+      height: 100%;
+      background-color: $border;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+}
+
+.article {
+  width: 70%;
+
+  &__list {
+    width: 70%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding-bottom: 72px;
+    border-bottom: 5px solid rgba($line, .07);
+    margin-bottom: 58px;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  &__desc {
+    color: $desc;
+    line-height: 26px;
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__title {
+    font-family: 'Sansus Webissimo';
+    font-size: 35px;
+    color: $title;
+    font-weight: 400;
+    margin-bottom: 14px;
+  }
+
+  &__date {
+    color: $date;
+    display: inline-block;
+    margin-bottom: 18px;
+  }
+
+  &__application {
+
+    img {
+      max-width: 100%;
+    }
+  }
 }

@@ -16,6 +16,9 @@ const PATHS = {
 const dev = process.env.NODE_ENV === 'dev';
 const prod = process.env.NODE_ENV === 'prod';
 
+console.log('STATUS DEV: ', dev);
+console.log('STATUS PROD: ', prod);
+
 module.exports = {
   entry: {
     'about': PATHS.source + '/views/about/about.js',
@@ -152,6 +155,7 @@ module.exports = {
               plugins: [
                 { removeNonInheritableGroupAttrs: true },
                 { collapseGroups: true },
+                // { removeViewBox: true},
                 { removeAttrs: { attrs: '(fill|stroke)' } },
               ],
             },

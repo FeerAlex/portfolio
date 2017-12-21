@@ -1,12 +1,13 @@
+block variables
+
 doctype html
-html
+html(lang='ru')
     head
         meta(charset = 'utf-8')
         meta(name = 'viewport', content = 'initial-scale=1.0,width=device-width')
-        title
-            block title
+        title= title
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js")
     body
-        .wrapper
+        .wrapper#wrapper
             .main
                 block content
-            .footer

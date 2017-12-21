@@ -3,13 +3,19 @@
   text-transform: uppercase;
   font-family: 'Sansus Webissimo';
   position: relative;
-  padding-bottom: rem(18px);
+  padding-bottom: rem(14px);
+  margin-top: rem(18px);
+  letter-spacing: 0.025em;
+  margin-bottom: rem(30px);
+  color: $olive;
+  text-align: center;
+  max-width: 350px;
 
   &:after {
     content: '';
     width: rem(89px);
     height: rem(3px);
-    background-color: $white;
+    background-color: $olive;
     position: absolute;
     left: 0;
     right: 0;
@@ -19,9 +25,18 @@
 
   &--middle {
     font-size: rem(35px);
+    max-width: rem(280px);
+    letter-spacing: normal;
+    padding-bottom: 27px;
+    margin: 0 auto;
+    line-height: 1.17;
   }
 
   &--white {
     color: $white;
+
+    &:after {
+      background-color: $white;
+    }
   }
 }

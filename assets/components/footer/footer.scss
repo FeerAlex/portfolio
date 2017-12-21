@@ -1,0 +1,88 @@
+$lightgreen:    #6c9c5a;
+$green:         #4e8839;
+$olive:         #566358;
+$darkolive:     #373e42;
+
+$darkgreen:     #122620;
+$greentext:     #455a64;
+$gray:          #f0efe9;
+$lightgay:      #c4cbcd;
+$red:           #e44845;
+
+$white:         #ffffff;
+$black:         #000000;
+
+@function rem($size: 16px) {
+    @return ($size / 16px) + rem;
+}
+
+.footer {
+    color: $white;
+    font-family: 'Roboto Light';
+    font-weight: 300;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &__content {
+        background-color: rgba($darkolive, .85);
+        display: flex;
+        padding: rem(30px) 0;
+    }
+
+    &__col {
+        flex: 1;
+        border-left: 1px solid rgba($white, .2);
+        padding: 0 rem(30px);
+
+        &:first-child {
+            border-left: none;
+        }
+    }
+
+    &__copy {
+        background-color: rgba($lightgreen, .85);
+        text-align: center;
+        padding: rem(7.5px);
+    }
+
+    &__quote {
+        font-style: italic;
+        opacity: .5;
+
+        &-author {
+            font-weight: 700;
+        }
+    }
+
+    &__nav {
+        margin-bottom: 25px;
+        margin-top: -6px;
+    }
+}
+
+.nav {
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__item {
+        display: inline-block;
+        margin-left: 6.5%;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    &__link {
+        color: $white;
+        text-decoration: none;
+        font-family: 'Roboto Medium';
+        font-weight: 500;
+    }
+}
