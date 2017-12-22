@@ -1,20 +1,7 @@
-$lightgreen:    #6c9c5a;
-$green:         #4e8839;
-$olive:         #566358;
-$darkolive:     #373e42;
-
-$darkgreen:     #122620;
-$greentext:     #455a64;
-$gray:          #f0efe9;
-$lightgay:      #c4cbcd;
-$red:           #e44845;
-
-$white:         #ffffff;
-$black:         #000000;
-
-@function rem($size: 16px) {
-    @return ($size / 16px) + rem;
-}
+// config
+@import '../../scss/config/_variables';
+@import '../../scss/config/_mixins';
+@import '../../scss/config/_media';
 
 .footer {
     color: $white;
@@ -28,16 +15,45 @@ $black:         #000000;
     &__content {
         background-color: rgba($darkolive, .85);
         display: flex;
-        padding: rem(30px) 0;
+        flex-wrap: wrap;
+        padding: rem(26px) 0 rem(30px);
     }
 
     &__col {
         flex: 1;
         border-left: 1px solid rgba($white, .2);
-        padding: 0 rem(30px);
+        padding: 0 rem(30px) rem(22px) rem(30px);
 
         &:first-child {
             border-left: none;
+        }
+
+        @include desktops {
+            padding-bottom: rem(3px);
+        }
+
+        @include tablets {
+            padding-bottom: rem(22px);
+
+            &--quote {
+                padding-top: rem(30px);
+                padding-bottom: 0;
+                width: 100%;
+                flex: auto;
+                border-left: none;
+            }
+        }
+
+        @include phones {
+            width: 100%;
+            flex: auto;
+            border-left: none;
+            border-top: 1px solid rgba($white, .2);
+            text-align: center;
+
+            &:first-child {
+                border-top: none;
+            }
         }
     }
 
@@ -57,26 +73,31 @@ $black:         #000000;
     }
 
     &__nav {
-        margin-bottom: 25px;
-        margin-top: -6px;
+        margin-bottom: rem(25px);
+
+        @include desktops {
+            margin-bottom: rem(21px);
+        }
     }
 }
 
 .nav {
 
     &__list {
-        margin: 0;
+        margin: 0 0 0 rem(-10px);
         padding: 0;
         list-style: none;
+        max-width: 405px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+
     }
 
     &__item {
         display: inline-block;
-        margin-left: 6.5%;
-
-        &:first-child {
-            margin-left: 0;
-        }
+        margin-left: rem(10px);
     }
 
     &__link {

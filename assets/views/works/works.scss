@@ -50,7 +50,7 @@ $post:          #373e42;
     }
 
     &__slider {
-        height: 750px;
+        height: 100vh;
     }
 }
 
@@ -124,20 +124,21 @@ $post:          #373e42;
         &-link {
             position: absolute;
             display: block;
-            width: 100%;
-            height: 100%;
             top: 0;
+            bottom: 0;
             left: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            right: 0;
 
             &--prev {
                 background-color: rgba($switchleft, .7);
+
+                &:hover { svg { top: 60%; } }
             }
 
             &--next {
                 background-color: rgba($switchright, .7);
+
+                &:hover { svg { top: 40%; } }
             }
         }
 
@@ -145,6 +146,11 @@ $post:          #373e42;
             width: 43px;
             height: 33px;
             fill: $white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            position: absolute;
+            transition: top .3s;
         }
     }
 

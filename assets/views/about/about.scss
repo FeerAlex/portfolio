@@ -179,14 +179,15 @@ $headercolor: #93c42e;
 }
 
 .map {
-  height: rem(1111px);
-  background-image: url(../../img/map.jpg);
-  background-size: cover;
-  position: relative;
+  height: calc(100vh + 185px);
+  // background-image: url(../../img/map.jpg);
+  // background-size: cover;
+  // position: relative;
+  background: #ccc;
 
   &__contacts {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 185px / 2);
     left: 50%;
     transform: translate(-50%,-50%);
   }

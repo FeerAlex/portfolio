@@ -92,9 +92,9 @@ module.exports = {
                 plugins: (loader) => [
                   require('autoprefixer')({
                     browsers: ['> 1%', 'last 2 versions', 'firefox >= 4', 'safari 7', 'safari 8', 'IE 8', 'IE 9', 'IE 10', 'IE 11']
-                  })
-                ]
-              }
+                  }),
+                ],
+              },
             },
             'sass-loader',
           ],
@@ -155,7 +155,6 @@ module.exports = {
               plugins: [
                 { removeNonInheritableGroupAttrs: true },
                 { collapseGroups: true },
-                // { removeViewBox: true},
                 { removeAttrs: { attrs: '(fill|stroke)' } },
               ],
             },

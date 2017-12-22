@@ -3,7 +3,8 @@ $white: #fff;
 .header {
     background: url("../../img/bg.jpg");
     background-size: cover;
-    height: 620px;
+    min-height: 620px;
+    height: 100vh;
     position: relative;
 
     &__socials {
