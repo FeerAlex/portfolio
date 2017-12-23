@@ -4,7 +4,7 @@ block variables
     - var title = 'Мои работы'
 
 block content
-    .work
+    .section.work
         svg(viewBox="0 0 1200 108" preserveAspectRatio="none").work__triangle
             use(xlink:href="#bg")
         .work__title
@@ -35,12 +35,12 @@ block content
                         a(href="#0").slider__switch-link.slider__switch-link--next
                             svg.slider__switch-icon
                                 use(xlink:href="#portf_arrow_up")
-    .rumors
-        .rumors__title.work__title-wrapper
+    .section.blur.js-blur
+        .blur__title.work__title-wrapper
             svg.work__title-bg
                 use(xlink:href="#about_header")
             h2.work__title-text.title Что обо мне говорят
-        .rumors__reviews.reviews
+        .blur__reviews.reviews
             ul.reviews__list
                 li.reviews__item
                     .reviews__image
@@ -62,7 +62,8 @@ block content
                     .reviews__author
                         span.reviews__author-name Сабанцев Владимир
                         span.reviews__author-post &mdash; преподаватель
-        .rumors__form.form
+        .blur__feedback.feedback.form.js-feedback
+            .feedback-bg.js-feedback-bg
             form.form__tag
                 .form__body
                     h2.form__title.title.title--middle связаться со мной
@@ -72,7 +73,7 @@ block content
                 .form__controls
                     button(type="submit").form__btn Отправить
                     button(type="reset").form__btn Очистить
-        .rumors__arrow
-            a(href="#0").rumors__arrow-link
-                svg.rumors__arrow-icon
+        .blur__arrow
+            a(href="#0").blur__arrow-link
+                svg.blur__arrow-icon
                     use(xlink:href="#arrow_down")

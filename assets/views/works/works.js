@@ -26,8 +26,35 @@ let footer = new Footer();
 
 let wrapper = document.querySelector('#wrapper');
 let main = document.querySelector('.main');
+let blurJs = document.querySelector('.blur');
 
 wrapper.insertBefore(header.elem, main);
-wrapper.appendChild(footer.elem);
+blurJs.appendChild(footer.elem);
 
 console.log('in works.js');
+
+
+let blur = (function() {
+  let wrapper = document.querySelector('.js-feedback'),
+    form = document.querySelector('.js-feedback-bg');
+
+  return {
+    set: function() {
+      let imgWidth = document.querySelector('.js-blur').offsetWidth,
+        imgHeight = document.querySelector('.js-blur').offsetHeight,
+        posLeft = -wrapper.offsetLeft,
+        posTop = -wrapper.offsetTop,
+        blurCSS = form.style;
+
+      blurCSS.width = `${imgWidth}px`;
+      blurCSS.height = `${imgHeight}px`;
+      blurCSS.transform = `translate(${posLeft}px,${posTop}px)`;
+    },
+  };
+}());
+
+blur.set();
+
+window.onresize = function() {
+  blur.set();
+};

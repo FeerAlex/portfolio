@@ -179,13 +179,13 @@ $headercolor: #93c42e;
 }
 
 .map {
-  height: calc(100vh + 185px);
+  height: 100vh;
   position: relative;
   background: #ccc;
 
   &__contacts {
     position: absolute;
-    top: calc(50% - 185px / 2);
+    top: calc(50%);
     left: 50%;
     transform: translate(-50%,-50%);
     z-index: 10;
