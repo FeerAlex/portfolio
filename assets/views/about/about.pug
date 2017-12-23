@@ -42,8 +42,9 @@ block content
                                                 .circular(data-percent=`${(i + n + 5) * 10}`)
                                                     svg.circular__svg
                                                     span.circular__span #{skill}
-    .map#map
-        //- .map__contacts
+    .map
+        div(style="height: 100%")#map
+        .map__contacts
             .contacts
                 h2.contacts__title.title.title--middle Контакты
                 ul.contacts__list

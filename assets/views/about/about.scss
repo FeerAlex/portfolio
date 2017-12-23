@@ -180,9 +180,7 @@ $headercolor: #93c42e;
 
 .map {
   height: calc(100vh + 185px);
-  // background-image: url(../../img/map.jpg);
-  // background-size: cover;
-  // position: relative;
+  position: relative;
   background: #ccc;
 
   &__contacts {
@@ -190,6 +188,7 @@ $headercolor: #93c42e;
     top: calc(50% - 185px / 2);
     left: 50%;
     transform: translate(-50%,-50%);
+    z-index: 10;
   }
 }
 
