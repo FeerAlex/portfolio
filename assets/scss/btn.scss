@@ -1,0 +1,52 @@
+.btn {
+    border: none;
+    outline: none;
+    height: rem(45px);
+    color: $white;
+    cursor: pointer;
+    @include transitio();
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    padding: rem(10px) 0;
+    text-align: center;
+  
+    &--card {
+      flex: 1 1 auto;
+      border-left: rem(1px) solid rgba($gray, .5);
+      border-right: rem(1px) solid rgba($gray, .5);
+      font-family: 'Roboto Medium';
+      font-weight: 500;
+  
+      &:first-child {
+        border-left: none;
+      }
+  
+      &:last-child {
+        border-right: none;
+      }
+    }
+  
+    &--transparent {
+      text-decoration: none;
+      display: inline-block;
+      border: 1px solid $white;
+      padding: rem(10px) rem(27px);
+      border-radius: rem(45px);
+      font-family: 'Roboto Medium';
+      font-weight: 500;
+  
+      &.btn:hover {
+        border-color: lighten($lightgreen, 10%);
+        background-color: $lightgreen;
+      }
+    }
+  
+    &--green {
+      background-color: rgba($lightgreen, .85);
+    }
+  
+    &:hover {
+      background-color: rgba($green, .85);
+    }
+  }

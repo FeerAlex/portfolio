@@ -4,7 +4,7 @@ block variables
     - var title = 'Мои работы'
 
 block content
-    .section.work
+    .work
         svg(viewBox="0 0 1200 108" preserveAspectRatio="none").work__triangle
             use(xlink:href="#bg")
         .work__title
@@ -13,29 +13,7 @@ block content
                     use(xlink:href="#works_header")
                 h1.work__title-text.title Мои работы
         .work__slider
-            .slider
-                .slider__desc
-                    .slider__content
-                        h3.slider__title.title.title--middle Сайт школы онлайн образования
-                        .slider__skills HTML, CSS, JAVASCRIPT
-                        a(href="#0").slider__link
-                            svg.slider__link-icon
-                                use(xlink:href="#link")
-                            span.slider__link-span Посмотреть сайт
-                .slider__screen
-                    img(src=require("../../img/slider/site-1.png")).slider__screen-img
-                .slider__switch
-                    .slider__switch-col
-                        img(src=require("../../img/slider/site-2.jpg")).slider__switch-img
-                        a(href="#0").slider__switch-link.slider__switch-link--prev
-                            svg.slider__switch-icon
-                                use(xlink:href="#portf_arrow_down")
-                    .slider__switch-col
-                        img(src=require("../../img/slider/site-3.jpg")).slider__switch-img
-                        a(href="#0").slider__switch-link.slider__switch-link--next
-                            svg.slider__switch-icon
-                                use(xlink:href="#portf_arrow_up")
-    .section.blur.js-blur
+    .blur.js-blur
         .blur__title.work__title-wrapper
             svg.work__title-bg
                 use(xlink:href="#about_header")

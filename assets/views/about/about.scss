@@ -1,4 +1,7 @@
+@import "../../scss/mixins";
+@import "../../scss/colors";
 @import "../../scss/main";
+// @import "../../scss/title";
 
 $leftcolor: #ebefe2;
 $rightcolor: #f4f5f0;
@@ -11,6 +14,10 @@ $headercolor: #93c42e;
   display: flex;
   color: $olive;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 
   &__triangle {
     width: 100%;
@@ -32,12 +39,16 @@ $headercolor: #93c42e;
     position: relative;
     background-color: $leftcolor;
 
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
     &-content {
       display: flex;
       flex-wrap: wrap;
       padding: 0 rem(20px) rem(16px) rem(20px);
 
-      @include desktops {
+      @media (max-width: 1200px) {
         flex-direction: column;
       }
     }
@@ -47,7 +58,7 @@ $headercolor: #93c42e;
     margin-top: rem(-66px);
     width: 49%;
 
-    @include desktops {
+    @media (max-width: 1200px) {
       width: auto;
     }
 
@@ -75,8 +86,14 @@ $headercolor: #93c42e;
   &__content {
     width: 51%;
 
-    @include desktops {
+    @media (max-width: 1200px) {
       width: auto;
+      max-width: rem(440px);
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      max-width: rem(472px);
     }
   }
 
@@ -85,6 +102,10 @@ $headercolor: #93c42e;
     max-height: rem(390px);
     overflow: hidden;
     margin-bottom: 41px;
+
+    @media (max-width: 768px) {
+      max-height: rem(417px);
+    }
   }
 
   &__avatar {
@@ -175,83 +196,5 @@ $headercolor: #93c42e;
     font-weight: 500;
     font-size: rem(14px);
     text-align: center;
-  }
-}
-
-.map {
-  height: 100vh;
-  position: relative;
-  background: #ccc;
-
-  &__contacts {
-    position: absolute;
-    top: calc(50%);
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 10;
-  }
-}
-
-.contacts {
-  border-radius: rem(5px);
-  background-color: rgba($white, .85);
-  width: rem(380px);
-  padding: rem(22px) rem(42px) rem(13px) rem(42px);
-  font-family: 'Roboto';
-  font-weight: 500;
-
-  &__title {
-    margin-bottom: 33px;
-  }
-
-  &__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  &__item {
-    margin-bottom: rem(22px);
-  }
-
-  &__link {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: rgba($greentext, .8);
-    position: relative;
-    padding-left: 24px;
-
-    &:hover, &:active {
-      color: rgba($greentext, .8);
-    }
-  }
-
-  &__icon {
-    fill: $lightgreen;
-    position: absolute;
-    left: 0;
-    width: 24px;
-
-    &--sk {
-      height: 24px;
-    }
-
-    &--tel {
-      height: 20px;
-    }
-
-    &--email {
-      height: 16px;
-    }
-
-    &--marker {
-      height: 21px;
-    }
-  }
-
-  &__span {
-    display: inline-block;
-    margin-left: rem(10px);
   }
 }

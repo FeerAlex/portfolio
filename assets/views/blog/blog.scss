@@ -1,3 +1,5 @@
+@import "../../scss/mixins";
+@import "../../scss/colors";
 @import "../../scss/main";
 
 $bgcolor:       #faf8f0;
@@ -40,7 +42,7 @@ $line:          #373e42; // o .07 h5
     align-items: center;
     height: 122px;
 
-    @include desktops {
+    @media (max-width: 1200px) {
       width: auto;
     }
 

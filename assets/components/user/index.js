@@ -5,7 +5,7 @@ import '../../fonts/Roboto-Medium.ttf';
 import './user.scss';
 import template from './user.pug';
 
-export default class Header {
+export default class User {
   constructor(opt) {
     this.elem = document.createElement('div');
     this.elem.className = 'user';

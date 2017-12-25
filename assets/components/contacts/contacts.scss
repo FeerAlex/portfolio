@@ -1,0 +1,75 @@
+@import "../../scss/mixins";
+@import "../../scss/colors";
+@import "../../scss/title";
+
+.contacts {
+    overflow: hidden;
+    background-color: rgba($white, .85);
+    padding: rem(22px) rem(42px) rem(13px) rem(42px);
+    font-family: 'Roboto Medium';
+    font-weight: 500;
+
+    @media(min-width: 480px) {
+      border-radius: rem(5px);
+      width: rem(375px);
+    }
+
+    @media (min-width: 768px) {
+      width: rem(380px);
+    }
+  
+    &__title {
+      margin-bottom: 33px;
+    }
+  
+    &__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  
+    &__item {
+      margin-bottom: rem(22px);
+    }
+  
+    &__link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: rgba($greentext, .8);
+      position: relative;
+      padding-left: 24px;
+  
+      &:hover, &:active {
+        color: rgba($greentext, .8);
+      }
+    }
+  
+    &__icon {
+      fill: $lightgreen;
+      position: absolute;
+      left: 0;
+      width: 24px;
+  
+      &--sk {
+        height: 24px;
+      }
+  
+      &--tel {
+        height: 20px;
+      }
+  
+      &--email {
+        height: 16px;
+      }
+  
+      &--marker {
+        height: 21px;
+      }
+    }
+  
+    &__span {
+      display: inline-block;
+      margin-left: rem(10px);
+    }
+}
