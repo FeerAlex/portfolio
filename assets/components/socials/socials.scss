@@ -57,15 +57,30 @@ $green: #6c9c5a;
     &--vk {
         width: 31px;
         height: 17px;
+
+        @media (max-width: 480px) {
+            width: 24px;
+            height: 13px;
+        }
     }
 
     &--gh {
         width: 26px;
         height: 22px;
+
+        @media (max-width: 480px) {
+            width: 21px;
+            height: 17px;
+        }
     }
 
     &--in {
         width: 24px;
         height: 22px;
+
+        @media (max-width: 480px) {
+            width: 19px;
+            height: 17px;
+        }
     }
 }

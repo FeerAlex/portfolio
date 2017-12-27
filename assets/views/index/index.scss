@@ -1,6 +1,8 @@
 @import "../../scss/mixins";
 @import "../../scss/colors";
 @import "../../scss/main";
+@import "../../scss/title";
+@import "../../scss/btn";
 
 .intro {
   height: 100%;
@@ -31,17 +33,34 @@
 
   &__btn {
     position: absolute;
-    top: rem(20px);
-    right: rem(20px);
+    top: 10px;
+
+    @media (min-width: 768px) {
+      top: 20px;
+      right: 20px;
+    }
+
+    @media (min-width: 1800px) {
+      top: 24px;
+      right: 100px;
+    }
   }
   
   &__card {
     position: relative;
-    width: rem(380px);
+    width: 380px;
     height: rem(426px);
     transform-style: preserve-3d;
     @include transitio();
     transition-duration: .6s;
+
+    @media (max-width: 768px) {
+      width: 348px;
+    }
+
+    @media (max-width: 480px) {
+      width: 300px;
+    }
 
     &--show {
       transform: rotateY(180deg);
@@ -51,11 +70,35 @@
   &__footer {
     color: $white;
     position: absolute;
-    bottom: rem(38px);
+    bottom: 4px;
     left: 0;
     right: 0;
+    line-height: 1.7;
     text-align: center;
     letter-spacing: rem(-0.1px);
+
+    @media (min-width: 768px) {
+      bottom: 38px;
+      line-height: normal;
+    }
+    
+    &-name {
+  
+      @media (max-width: 480px) {
+        display: block;
+      }
+    }
+  
+    &-company:before, &-year:before {
+      content: '|';
+      margin: 0 4px;
+    }
+  
+    &-company:before {
+      @media (max-width: 480px) {
+          content: none;
+      }
+    }
   }
 }
 
@@ -82,32 +125,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-  }
-
-  &__photo {
-    @include circle(rem(141px), $white);
-    overflow: hidden;
-    margin-bottom: rem(11px);
-  }
-
-  &__image {
-    background-image: url("../../img/user.jpg");
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__user-name {
-    font-size: rem(28px);
-    font-weight: 500;
-    margin-bottom: rem(2px);
-    font-family: 'Roboto Medium';
-    font-weight: 500;
-  }
-
-  &__desc {
-    margin-bottom: rem(33px);
   }
 
   &__socials {
@@ -288,6 +305,7 @@
       width: 100%;
       margin-bottom: rem(8px);
       font-weight: 700;
+      text-align: center;
     }
   }
 }

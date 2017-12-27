@@ -42,6 +42,10 @@ $white: #fff;
 
     &--intro {
 
+        .user__photo {
+            margin: 0 auto 13px auto;
+        }
+
         .user__name {
             font-size: 28px;
         }

@@ -31,10 +31,18 @@
       text-decoration: none;
       display: inline-block;
       border: 1px solid $white;
-      padding: rem(10px) rem(27px);
+      padding: 10px 27px;
       border-radius: rem(45px);
       font-family: 'Roboto Medium';
       font-weight: 500;
+
+      @media (max-width: 768px) {
+        padding: 10px 31px;
+      }
+
+      @media (max-width: 480px) {
+        padding: 10px 18px;
+      }
   
       &.btn:hover {
         border-color: lighten($lightgreen, 10%);
