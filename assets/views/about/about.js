@@ -8,8 +8,7 @@ import '../../fonts/Sansus-Webissimo-Regular.ttf';
 /* ICONS */
 import '../../img/icons/ellipse.svg';
 import '../../img/icons/about_header.svg';
-import '../../img/icons/about_bg_left.svg';
-import '../../img/icons/about_bg_right.svg';
+import '../../img/icons/about_bg.svg';
 
 /* COMPONENTS */
 import Header from '../../components/header';

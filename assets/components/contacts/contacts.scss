@@ -1,25 +1,32 @@
 @import "../../scss/mixins";
 @import "../../scss/colors";
-@import "../../scss/title";
 
 .contacts {
     overflow: hidden;
     background-color: rgba($white, .85);
-    padding: rem(22px) rem(42px) rem(13px) rem(42px);
+    padding: 18px 20px 10px 29px;
     font-family: 'Roboto Medium';
     font-weight: 500;
 
     @media(min-width: 480px) {
       border-radius: rem(5px);
-      width: rem(375px);
+      width: 350px;
+      padding: 27px 20px 10px 20px;
     }
 
-    @media (min-width: 768px) {
-      width: rem(380px);
+    @media (min-width: 769px) {
+      width: 380px;
+      padding: 22px 42px 13px 42px;
     }
   
     &__title {
       margin-bottom: 33px;
+
+      @media (max-width: 768px) {
+        font-size: 35px;
+        padding-bottom: 16px;
+        margin-bottom: 22px;
+      }
     }
   
     &__list {
@@ -30,6 +37,10 @@
   
     &__item {
       margin-bottom: rem(22px);
+
+      @media (max-width: 768px) {
+        margin-bottom: 27px;
+      }
     }
   
     &__link {

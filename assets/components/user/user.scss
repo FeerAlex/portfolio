@@ -10,6 +10,10 @@ $white: #fff;
         border-radius: 50%;
         overflow: hidden;
         margin: 0 auto 20px auto;
+
+        @media (max-width: 480px) {
+            margin-bottom: 25px;
+        }
     }
 
     &__avatar {
@@ -21,11 +25,19 @@ $white: #fff;
         font-family: 'Roboto Medium';
         font-size: 35px;
         font-weight: 500;
+        white-space: nowrap;
+
+        @media (max-width: 480px) {
+            font-size: 20px;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
     }
 
     &__desc {
         font-family: 'Roboto';
         font-weight: 400;
+        white-space: nowrap;
     }
 
     &--intro {
