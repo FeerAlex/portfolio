@@ -8,16 +8,15 @@ block content
         svg(viewBox="0 0 1200 108" preserveAspectRatio="none").work__triangle
             use(xlink:href="#bg")
         .work__title
-            .work__title-wrapper
-                svg.work__title-bg
-                    use(xlink:href="#works_header")
-                h1.work__title-text.title Мои работы
+            svg.work__title-bg
+                use(xlink:href="#works_header")
+            h1.work__title-text.title Мои работы
         .work__slider
     .blur.js-blur
-        .blur__title.work__title-wrapper
-            svg.work__title-bg
+        .blur__title
+            svg.blur__title-bg
                 use(xlink:href="#about_header")
-            h2.work__title-text.title Что обо мне говорят
+            h2.blur__title-text.title Что обо мне говорят
         .blur__reviews.reviews
             ul.reviews__list
                 li.reviews__item
@@ -29,7 +28,7 @@ block content
                             use(xlink:href="#quote")
                     .reviews__author
                         span.reviews__author-name Ковальчук Дмитрий
-                        span.reviews__author-post &mdash; основатель Loftschool
+                        span.reviews__author-post основатель Loftschool
                 li.reviews__item
                     .reviews__image
                         img(src=require("../../img/vladimir.png"), alt="").reviews__avatar
@@ -39,18 +38,18 @@ block content
                             use(xlink:href="#quote")
                     .reviews__author
                         span.reviews__author-name Сабанцев Владимир
-                        span.reviews__author-post &mdash; преподаватель
-        .blur__feedback.feedback.form.js-feedback
+                        span.reviews__author-post преподаватель
+        .blur__feedback.feedback.js-feedback
             .feedback-bg.js-feedback-bg
-            form.form__tag
-                .form__body
-                    h2.form__title.title.title--middle связаться со мной
-                    input(placeholder="Имя").form__input
-                    input(placeholder="Email").form__input
-                    textarea(placeholder="Ваше сообщение").form__textarea
-                .form__controls
-                    button(type="submit").form__btn Отправить
-                    button(type="reset").form__btn Очистить
+            form.feedback__tag
+                .feedback__body
+                    h2.feedback__title.title.title--middle связаться со мной
+                    input(placeholder="Имя").feedback__input
+                    input(placeholder="Email").feedback__input
+                    textarea(placeholder="Ваше сообщение").feedback__textarea
+                .feedback__controls
+                    button(type="submit").feedback__btn Отправить
+                    button(type="reset").feedback__btn Очистить
         .blur__arrow
             a(href="#0").blur__arrow-link
                 svg.blur__arrow-icon
