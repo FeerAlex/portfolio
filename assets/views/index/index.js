@@ -40,9 +40,8 @@ btnFront2.addEventListener('click', function(e) {
 });
 
 function reverseCard(e) {
-
   e.preventDefault();
 
-  let card = document.getElementById('intro_card');
-  card.classList.toggle('intro__card--show');
+  let intro = document.querySelector('.intro');
+  intro.classList.toggle('intro--toggle');
 }
