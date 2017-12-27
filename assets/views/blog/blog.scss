@@ -70,21 +70,71 @@ $line:          #373e42; // o .07 h5
       margin-left: -5px;
     }
   }
+
+  // &--fixed {
+  //   .sidebar {
+  //     position: fixed;
+  //     top: 0;
+  //     left: 0;
+  //   }
+
+  //   .article {
+  //     margin-left: 295px;
+
+  //     @media (max-width: 1200px) {
+  //       margin-left: 24.59%;
+  //     }
+  //   }
+  // }
 }
 
 .sidebar {
-  padding: 8px 0 0 20px;
-  display: flex;
-  justify-content: flex-end;
-  text-align: right;
   width: 295px;
+  transition: all .3s;
+  will-change: transform;
 
   @media (max-width: 1200px) {
     width: 24.59%;
   }
 
   @media (max-width: 768px) {
-    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -9999px;
+    left: 0;
+    width: 284px;
+    z-index: 100;
+    box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  &__inner {
+    height: 100%;
+    padding: 8px 0 0 20px;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    position: relative;
+
+    @media (max-width: 768px) {
+      align-items: center;
+      padding-top: 0;
+      background-color: $border;
+
+      &:after {
+        content: "";
+        width: 60px;
+        height: 60px;
+        background: $border;
+        border-radius: 50%;
+        transform: translate(14%, -50%);
+        top: 50%;
+        z-index: -10;
+        position: absolute;
+        will-change: transform;
+        box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);   
+      }
+    }
   }
 
   &__list {
@@ -100,8 +150,16 @@ $line:          #373e42; // o .07 h5
         font-weight: 700;
         color: green;
 
+        @media (max-width: 768px) {
+          color: white;
+        }
+
         &:after {
           opacity: 1;
+
+          @media (max-width: 768px) {
+            opacity: 0;
+          }
         }
       }
     }
@@ -114,6 +172,11 @@ $line:          #373e42; // o .07 h5
     display: inline-block;
     position: relative;
     line-height: 1.6;
+
+    @media (max-width: 768px) {
+      color: rgba($white, .7);
+      letter-spacing: 0.5px;
+    }
 
     &:after {
       content: '';

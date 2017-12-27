@@ -4,19 +4,20 @@ block variables
     - var title = 'Блог'
 
 block content
-    .blog
+    .blog.blog--fixed
         svg(viewBox="0 0 1200 108" preserveAspectRatio="none").blog__triangle
             use(xlink:href="#bg")
         .sidebar
-            ul.sidebar__list
-                li.sidebar__item.sidebar__item--active
-                    a(href="#0").sidebar__link Самое важное в SASS
-                li.sidebar__item
-                    a(href="#0").sidebar__link Приёмы в вёрстке, без которых не обходится ни один сайт
-                li.sidebar__item
-                    a(href="#0").sidebar__link Самый необходимый набор Gulp плагинов
-                li.sidebar__item
-                    a(href="#0").sidebar__link Почему я выбрал Jade
+            .sidebar__inner
+                ul.sidebar__list
+                    li.sidebar__item.sidebar__item--active
+                        a(href="#0").sidebar__link Самое важное в SASS
+                    li.sidebar__item
+                        a(href="#0").sidebar__link Приёмы в вёрстке, без которых не обходится ни один сайт
+                    li.sidebar__item
+                        a(href="#0").sidebar__link Самый необходимый набор Gulp плагинов
+                    li.sidebar__item
+                        a(href="#0").sidebar__link Почему я выбрал Jade
         .article
             ul.article__list
                 li.article__item
