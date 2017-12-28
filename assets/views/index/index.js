@@ -1,6 +1,8 @@
 import 'normalize.css';
 import './index.scss';
 
+import '../../components/water';
+
 /* COMPONENTS */
 import User from '../../components/user';
 import Socials from '../../components/socials';

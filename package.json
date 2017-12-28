@@ -6,7 +6,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=dev webpack-dev-server",
     "build": "cross-env NODE_ENV=prod webpack",
-    "serv": "static build"
+    "serv": "static build",
+    "test:lint": "eslint . --cache"
   },
   "author": "",
   "license": "ISC",

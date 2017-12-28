@@ -29,7 +29,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     noInfo: true,
-    overlay: true
+    overlay: true,
   },
   devtool: dev ? 'inline-cheap-module-source-map' : '(none)',
   output: {
@@ -91,7 +91,7 @@ module.exports = {
               options:{
                 plugins: (loader) => [
                   require('autoprefixer')({
-                    browsers: ['> 1%', 'last 2 versions', 'firefox >= 4', 'safari 7', 'safari 8', 'IE 8', 'IE 9', 'IE 10', 'IE 11']
+                    browsers: ['> 1%', 'last 2 versions', 'firefox >= 4', 'safari 7', 'safari 8', 'IE 8', 'IE 9', 'IE 10', 'IE 11'],
                   }),
                 ],
               },
@@ -106,14 +106,14 @@ module.exports = {
           fallback: 'style-loader',
           use: [
             'css-loader',
-          ]
+          ],
         }),
       },
       {
         test: /\.js$/,
-        enforce: "pre",
+        enforce: 'pre',
         exclude: /node_modules/,
-        loader: "eslint-loader",
+        loader: 'eslint-loader',
       },
       {
         test: /\.js$/,
@@ -139,7 +139,7 @@ module.exports = {
             loader: 'img-loader',
             options: {
               enabled: prod,
-            }
+            },
           },
         ],
       },
@@ -147,7 +147,7 @@ module.exports = {
         test: /\.svg$/,
         use: [
           {
-            loader: 'svg-sprite-loader'
+            loader: 'svg-sprite-loader',
           },
           {
             loader: 'svgo-loader',
@@ -200,4 +200,4 @@ if (prod) {
       prefix: 'icons-[name]/',
     }),
   ]);
-};
+}
