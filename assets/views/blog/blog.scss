@@ -11,6 +11,13 @@ $date:          #4e8839;
 $desc:          #455a64;
 $line:          #373e42; // o .07 h5
 
+.user__photo {
+  margin-bottom: 18px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 35px;
+  }
+}
 .blog {
   display: flex;
   justify-content: center;
@@ -42,11 +49,17 @@ $line:          #373e42; // o .07 h5
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 122px;
+    height: 108px;
+    margin-bottom: 10px;
 
-    @media (max-width: 1200px) {
-      width: auto;
+    @media (max-width: 768px) {
+      height: 54px;
     }
+
+    @media (max-width: 480px) {
+      margin-bottom: 4px;
+    }
+    
 
     &-bg {
       fill: $white;
@@ -54,13 +67,21 @@ $line:          #373e42; // o .07 h5
       margin: 0 auto;
       display: block;
       width: 303px;
-      height: 208px;
     }
 
     &-text {
       position: absolute;
       margin-top: -14px;
-      margin-left: -5px;
+
+      @media (max-width: 768px) {
+        font-size: 49px;
+        padding-bottom: 5px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 35px;
+        padding-bottom: 12px;
+      }
     }
   }
 
@@ -95,7 +116,7 @@ $line:          #373e42; // o .07 h5
     top: 0;
     bottom: 0;
     left: -9999px;
-    left: 0;
+    // left: 0;
     width: 284px;
     z-index: 100;
     box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);

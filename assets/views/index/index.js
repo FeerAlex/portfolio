@@ -21,6 +21,10 @@ import '../../img/icons/check.svg';
 import '../../img/icons/login.svg';
 import '../../img/icons/password.svg';
 
+/* IMAGES */
+import '../../img/water.jpg';
+import '../../img/water-maps.jpg';
+
 let user = new User();
 let socials = new Socials();
 

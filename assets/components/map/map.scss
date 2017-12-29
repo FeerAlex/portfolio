@@ -21,4 +21,12 @@
 
 #map {
   height: 100%;
+  padding-bottom: 250px;
+  margin-bottom: -250px;
+  box-sizing: content-box;
+
+  @media (max-width: 768px) {
+    padding-bottom: 300px;
+    margin-bottom: -300px;
+  }
 }

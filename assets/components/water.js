@@ -64,8 +64,8 @@
 	
 	var divSelector = '.Background';
 	var canvasSelector = '.Background-canvas';
-	var filePath = '../../assets/img/water.jpg';
-	var fileMapsPath = '../../assets/img/water-maps.jpg';
+	var filePath = '/images/water.jpg';
+	var fileMapsPath = '/images/water-maps.jpg';
 	
 	var canvas = document.querySelector(canvasSelector);
 	

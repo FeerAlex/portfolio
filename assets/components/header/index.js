@@ -25,17 +25,17 @@ export default class Header {
     this.elem.className = 'header';
     this.elem.innerHTML = template(opt);
 
-    const socials = this.elem.querySelector('.header__socials');
-    const bg = this.elem.querySelector('.header__bg');
-    const userBlock = this.elem.querySelector('.header__user');
-    const sectionText = this.elem.querySelector('.header__portfolio-icon');
+    const socials = this.elem.querySelector('.js-header__socials');
+    const bg = this.elem.querySelector('.js-header__bg');
+    const userBlock = this.elem.querySelector('.js-header__user');
+    const sectionText = this.elem.querySelector('.js-header__portfolio-icon');
 
     userBlock.appendChild(user.elem);
     socials.appendChild(social.elem);
 
     window.onscroll = function() {
       let wScroll = window.pageYOffset;
-      let parallaxBg = new Parallax(bg, wScroll, 50);
+      let parallaxBg = new Parallax(bg, wScroll, 90);
       let parallaxUser = new Parallax(userBlock, wScroll, 5);
 
       parallaxBg.move();
