@@ -15,7 +15,6 @@ $post:          #373e42;
 .work {
     position: relative;
     background-color: $bgcolor;
-    // margin-bottom: 47px;
 
     &__triangle {
         position: absolute;
@@ -42,6 +41,10 @@ $post:          #373e42;
             display: block;
             width: 506px;
             max-width: 100%;
+
+            @media (max-width: 480px) {
+                height: 80px;
+            }
         }
       
         &-text {
@@ -56,6 +59,14 @@ $post:          #373e42;
                 line-height: 1;
                 padding-bottom: 16px;
                 margin-top: 26px;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 35px;
+                margin-bottom: 10px;
+                padding-bottom: 20px;
+                margin-top: 10px;
+                letter-spacing: 0.8px
             }
         }
     }

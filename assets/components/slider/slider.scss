@@ -132,6 +132,13 @@ $greenbtn:      #6c9c5a;
             padding-bottom: 12px;
             margin-bottom: 18px;
         }
+
+        @media (max-width: 480px) {
+            font-size: 21px;
+            line-height: 1.35;
+            padding-bottom: 15.5px;
+            margin-bottom: 16px;
+        }
     }
 
     &__content {
@@ -156,6 +163,10 @@ $greenbtn:      #6c9c5a;
         @media (max-width: 768px) {
             margin-bottom: 35px;
         }
+
+        @media (max-width: 480px) {
+            margin-bottom: 14px;
+        }
     }
 
     &__link {
@@ -170,6 +181,11 @@ $greenbtn:      #6c9c5a;
         font-weight: 500;
         display: flex;
         align-items: center;
+
+        @media (max-width: 480px) {
+            height: 40px;
+            line-height: 40px;
+        }
 
         &-icon {
             width: 20px;
