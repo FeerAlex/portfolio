@@ -1,6 +1,8 @@
 import 'normalize.css';
 import './index.scss';
 
+import '../../components/water';
+
 /* COMPONENTS */
 import User from '../../components/user';
 import Socials from '../../components/socials';
@@ -18,6 +20,10 @@ import '../../img/icons/in.svg';
 import '../../img/icons/check.svg';
 import '../../img/icons/login.svg';
 import '../../img/icons/password.svg';
+
+/* IMAGES */
+import '../../img/water.jpg';
+import '../../img/water-maps.jpg';
 
 let user = new User();
 let socials = new Socials();
@@ -40,9 +46,8 @@ btnFront2.addEventListener('click', function(e) {
 });
 
 function reverseCard(e) {
-
   e.preventDefault();
 
-  let card = document.getElementById('intro_card');
-  card.classList.toggle('intro__card--show');
+  let intro = document.querySelector('.intro');
+  intro.classList.toggle('intro--toggle');
 }

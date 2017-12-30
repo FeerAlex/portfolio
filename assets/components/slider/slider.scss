@@ -1,0 +1,201 @@
+@import "../../scss/colors";
+
+$desccolor:     #ebefe2;
+$screencolor:   #e1e4d7;
+$switchleft:    #b0b7aa;
+$switchright:   #93998d;
+$greenbtn:      #6c9c5a;
+
+.slider {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+        height: auto;
+    }
+
+    &__screen {
+        width: 50%;
+        background: $screencolor;
+        height: 71%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            height: rem(529px);
+            order: 1;
+        }
+
+        @media (max-width: 480px) {
+            height: rem(257px);
+        }
+
+        &-img {
+            max-width: 100%;
+            max-height: 100%;
+            display: inline-block;
+        }
+    }
+
+    &__desc {
+        width: 50%;
+        height: 100%;
+        background: $desccolor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            height: auto;
+            padding: 40px;
+            order: 2;
+        }
+
+        @media (max-width: 480px) {
+            padding: 30px;
+        }
+    }
+
+    &__switch {
+        width: 50%;
+        height: 29%;
+        display: flex;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            height: rem(215px);
+            order: 3;
+        }
+
+        @media (max-width: 480px) {
+            height: rem(98px);
+        }
+
+        &-col {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &-img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        &-link {
+            position: absolute;
+            display: block;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            &--prev {
+                background-color: rgba($switchleft, .7);
+
+                &:hover { svg { top: 60%; } }
+            }
+
+            &--next {
+                background-color: rgba($switchright, .7);
+
+                &:hover { svg { top: 40%; } }
+            }
+        }
+
+        &-icon {
+            width: 43px;
+            height: 33px;
+            fill: $white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            position: absolute;
+            transition: top .3s;
+        }
+    }
+
+    &__title {
+        max-width: 350px;
+        margin-bottom: 22px;
+
+        @media (max-width: 768px) {
+            max-width: none;
+            padding-bottom: 12px;
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 21px;
+            line-height: 1.35;
+            padding-bottom: 15.5px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__content {
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            max-width: none;
+        }
+    }
+
+    &__skills {
+        text-align: center;
+        color: $green;
+        text-transform: uppercase;
+        margin-bottom: 55px;
+        font-family: 'Roboto Medium';
+        font-weight: 500;
+
+        @media (max-width: 768px) {
+            margin-bottom: 35px;
+        }
+
+        @media (max-width: 480px) {
+            margin-bottom: 14px;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        height: 45px;
+        line-height: 45px;
+        background-color: $greenbtn;
+        padding: 0 18px;
+        border-radius: 45px;
+        text-decoration: none;
+        font-family: 'Roboto Medium';
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 480px) {
+            height: 40px;
+            line-height: 40px;
+        }
+
+        &-icon {
+            width: 20px;
+            height: 19px;
+            fill: $white;
+        }
+
+        &-span {
+            margin-left: 12px;
+            color: $white;
+        }
+    }
+}

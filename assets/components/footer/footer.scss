@@ -1,82 +1,143 @@
-$lightgreen:    #6c9c5a;
-$green:         #4e8839;
-$olive:         #566358;
-$darkolive:     #373e42;
-
-$darkgreen:     #122620;
-$greentext:     #455a64;
-$gray:          #f0efe9;
-$lightgay:      #c4cbcd;
-$red:           #e44845;
-
-$white:         #ffffff;
-$black:         #000000;
-
-@function rem($size: 16px) {
-    @return ($size / 16px) + rem;
-}
+@import "../../scss/colors";
+@import "../../scss/mixins";
 
 .footer {
     color: $white;
     font-family: 'Roboto Light';
     font-weight: 300;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+    width: 100%;
 
     &__content {
         background-color: rgba($darkolive, .85);
         display: flex;
-        padding: rem(30px) 0;
+        flex-wrap: wrap;
+
+        @media (min-width: 481px) {
+            padding-top: rem(28px);
+        }
+        
+        @media (min-width: 769px) {
+            padding: rem(24px) 0 rem(18px) 0;
+        }
+
+        @media (min-width: 1200px) {
+            padding: rem(26px) 0 rem(25px) 0;
+        }
     }
 
     &__col {
         flex: 1;
-        border-left: 1px solid rgba($white, .2);
-        padding: 0 rem(30px);
+        position: relative;
+        padding: 0 rem(30px) rem(25px) rem(30px);
 
-        &:first-child {
-            border-left: none;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 88px;
+            left: rem(-0.5px);
+            top: rem(7px);
+            background-color: rgba($white, .2);
+        }
+
+        &:first-child:before {
+            content: none;
+        }
+
+        @media (max-width: 1530px) {
+            padding-bottom: rem(3px);
+        }
+
+        @media (max-width: 768px) {
+            padding: 0 rem(24px) rem(25px) rem(24px);
+
+            &--quote {
+                padding-top: rem(30px);
+                width: 100%;
+                flex: auto;
+                
+                &:before {
+                    content: none;
+                }
+            }
+        }
+
+        @media (max-width: 480px) {
+            width: 100%;
+            flex: auto;
+            text-align: center;
+            padding: rem(18px) rem(10px);
+
+            &:before {
+                content: '';
+                width: 94%;
+                height: 1px;
+                top: rem(-0.5px);
+                left: 3%;
+            }
         }
     }
 
-    &__copy {
-        background-color: rgba($lightgreen, .85);
-        text-align: center;
-        padding: rem(7.5px);
+    &__desc {
+
+        @media (max-width: 1200px) {
+            line-height: 1.6;
+        }
+    }
+
+    &__nav {
+        margin-bottom: rem(21px);
+
+        @media (max-width: 768px) and (min-width: 480px) {
+            padding: 0 rem(15px);
+            margin-left: rem(-10px);
+        }
+        
+        @media (min-width: 1200px) {
+            margin-bottom: rem(25px);
+        }
+    }
+
+    &__socials {
+        @media (min-width: 480px) and (max-width: 768px) {
+            padding-left: 7px;
+        }
     }
 
     &__quote {
         font-style: italic;
         opacity: .5;
+        line-height: 1.6;
+
+        @media (max-width: 1200px) {
+            line-height: 1.65;
+        }
 
         &-author {
             font-weight: 700;
         }
-    }
-
-    &__nav {
-        margin-bottom: 25px;
-        margin-top: -6px;
     }
 }
 
 .nav {
 
     &__list {
-        margin: 0;
+        margin: 0 0 0 rem(-10px);
         padding: 0;
         list-style: none;
+        max-width: 405px;
+        flex-wrap: wrap;
+
+        @media (min-width: 1200px) {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     &__item {
         display: inline-block;
-        margin-left: 6.5%;
-
-        &:first-child {
-            margin-left: 0;
-        }
+        margin-left: rem(10px);
     }
 
     &__link {
@@ -84,5 +145,34 @@ $black:         #000000;
         text-decoration: none;
         font-family: 'Roboto Medium';
         font-weight: 500;
+    }
+}
+
+.copy {
+    background-color: rgba($lightgreen, .85);
+    text-align: center;
+    padding: rem(7.5px) 0;
+
+    @media (max-width:480px) {
+        padding: rem(12px) 0;
+        line-height: 1.7;
+    }
+
+    &__name {
+
+        @media (max-width: 480px) {
+            display: block;
+        }
+    }
+
+    &__company:before, &__year:before {
+        content: '|';
+        margin: 0 4px;
+    }
+
+    &__company:before {
+        @media (max-width: 480px) {
+            content: none;
+        }
     }
 }

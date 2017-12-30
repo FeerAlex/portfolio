@@ -1,6 +1,7 @@
 'use strict';
 
 import './header.scss';
+import Parallax from '../parallax';
 
 import template from './header.pug';
 
@@ -24,7 +25,26 @@ export default class Header {
     this.elem.className = 'header';
     this.elem.innerHTML = template(opt);
 
-    this.elem.querySelector('.header__socials').appendChild(social.elem);
-    this.elem.querySelector('.header__user').appendChild(user.elem);
+    const socials = this.elem.querySelector('.js-header__socials');
+    const bg = this.elem.querySelector('.js-header__bg');
+    const userBlock = this.elem.querySelector('.js-header__user');
+    const sectionText = this.elem.querySelector('.js-header__portfolio-icon');
+
+    userBlock.appendChild(user.elem);
+    socials.appendChild(social.elem);
+
+    window.onscroll = function() {
+      let wScroll = window.pageYOffset;
+      let parallaxBg = new Parallax(bg, wScroll, 90);
+      let parallaxUser = new Parallax(userBlock, wScroll, 5);
+
+      parallaxBg.move();
+      parallaxUser.move();
+
+      if(sectionText) {
+        let parallaxsectionText = new Parallax(sectionText, wScroll, 25);
+        parallaxsectionText.move();
+      }
+    };
   }
 }

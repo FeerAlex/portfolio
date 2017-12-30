@@ -1,4 +1,7 @@
+@import "../../scss/mixins";
+@import "../../scss/colors";
 @import "../../scss/main";
+@import "../../scss/title";
 
 $leftcolor: #ebefe2;
 $rightcolor: #f4f5f0;
@@ -11,19 +14,26 @@ $headercolor: #93c42e;
   display: flex;
   color: $olive;
   flex-wrap: wrap;
+  position: relative;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 
   &__triangle {
-    width: 100%;
-    height: 178px;
     position: absolute;
     bottom: 100%;
 
-    &--left {
+    &-left {
       fill: $leftcolor;
     }
 
-    &--right {
+    &-right {
       fill: $rightcolor;
+
+      @media (max-width: 768px) {
+        fill: $leftcolor;
+      }
     }
   }
 
@@ -31,15 +41,21 @@ $headercolor: #93c42e;
     width: 50%;
     position: relative;
     background-color: $leftcolor;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px 16px 20px;
 
-    &-content {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0 rem(20px) rem(16px) rem(20px);
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
 
-      @include desktops {
-        flex-direction: column;
-      }
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 80px 20px 40px 20px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 60px 0 12px 0;
     }
   }
 
@@ -47,8 +63,13 @@ $headercolor: #93c42e;
     margin-top: rem(-66px);
     width: 49%;
 
-    @include desktops {
+    @media (max-width: 1200px) {
       width: auto;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 480px) {
+      margin-bottom: 21px;
     }
 
     &-bg {
@@ -57,6 +78,14 @@ $headercolor: #93c42e;
       margin: 0 auto;
       display: block;
       width: 357px;
+
+      @media (max-width: 768px) {
+        height: 90px;
+      }
+
+      @media (max-width: 480px) {
+        height: 70px;
+      }
     }
 
     &-wrapper {
@@ -69,14 +98,33 @@ $headercolor: #93c42e;
 
     &-text {
       position: absolute;
+
+      @media (max-width: 768px) {
+        font-size: 49px;
+        padding-bottom: 5px;
+        margin-top: 3px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 35px;
+        margin-bottom: 10px;
+        padding-bottom: 12px;
+        margin-top: 10px;
+      }
     }
   }
 
   &__content {
     width: 51%;
 
-    @include desktops {
+    @media (max-width: 1200px) {
       width: auto;
+      max-width: rem(440px);
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 472px;
     }
   }
 
@@ -85,19 +133,38 @@ $headercolor: #93c42e;
     max-height: rem(390px);
     overflow: hidden;
     margin-bottom: 41px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      max-height: 417px;
+    }
+
+    @media (max-width: 480px) {
+      max-height: 284px;
+      margin-bottom: 34px;
+    }
   }
 
   &__avatar {
     max-width: 100%;
+    display: inline-block;
   }
 
   &__desc {
     font-family: 'Roboto';
     font-weight: 400;
 
+    @media (max-width: 480px) {
+      padding: 0 10px;
+    }
+
     p {
       margin-bottom: 10px;
       line-height: 1.5;
+
+      @media (max-width: 480px) {
+        line-height: 1.75;
+      }
     }
   }
 
@@ -105,21 +172,51 @@ $headercolor: #93c42e;
     background-color: $rightcolor;
     width: 50%;
     position: relative;
+    padding: rem(20px) rem(15px) rem(16px) rem(39px);
 
-    &-content {
-      padding: 0 rem(47px) rem(16px) rem(39px);
+    @media (max-width: 768px) {
+      width: 100%;
+      text-align: center;
+      padding: rem(45px) rem(20px) rem(16px) rem(20px);
+    }
+
+    @media (max-width: 480px) {
+      padding: rem(35px) rem(20px) 0 rem(20px);
     }
   }
 
   &__subtitle {
     margin-top: rem(-9px);
     margin-bottom: rem(25px);
+
+    @media (max-width: 768px) {
+      margin-bottom: rem(17px);
+    }
+
+    .title {
+      @media (max-width: 768px) {
+        padding-bottom: 14px;
+        letter-spacing: -1px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 22px;
+        padding-bottom: 16px;
+        line-height: 1.3;
+      }
+    }
   }
 
   &__useful {
     font-family: 'Roboto';
     font-weight: 400;
     margin-bottom: 46px;
+
+    @media (max-width: 480px) {
+      line-height: 1.7;
+      text-align: left;
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -130,7 +227,11 @@ $headercolor: #93c42e;
   }
 
   &__item {
-    margin-bottom: 26px;
+    
+
+    @media (min-width: 481px) and (max-width: 768px) {
+      margin-bottom: 10px;
+    }
   }
 
   &__row {
@@ -140,6 +241,10 @@ $headercolor: #93c42e;
       font-weight: 500;
       letter-spacing: rem(0.1px);
       margin-bottom: rem(10px);
+
+      @media (max-width: 768px) {
+        font-size: rem(23px);
+      }
     }
 
     &-list {
@@ -150,6 +255,7 @@ $headercolor: #93c42e;
     &-item {
       display: inline-block;
       margin-left: rem(36.5px);
+      margin-bottom: rem(34px);
     }
   }
 }
@@ -158,6 +264,11 @@ $headercolor: #93c42e;
   width: 120px;
   height: 120px;
   position: relative;
+
+  @media (max-width: 1200px) {
+    width: 110px;
+    height: 110px;
+  }
 
   &__svg {
     fill: rgba($white, 0);
@@ -175,83 +286,9 @@ $headercolor: #93c42e;
     font-weight: 500;
     font-size: rem(14px);
     text-align: center;
-  }
-}
 
-.map {
-  height: rem(1111px);
-  background-image: url(../../img/map.jpg);
-  background-size: cover;
-  position: relative;
-
-  &__contacts {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  }
-}
-
-.contacts {
-  border-radius: rem(5px);
-  background-color: rgba($white, .85);
-  width: rem(380px);
-  padding: rem(22px) rem(42px) rem(13px) rem(42px);
-  font-family: 'Roboto';
-  font-weight: 500;
-
-  &__title {
-    margin-bottom: 33px;
-  }
-
-  &__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  &__item {
-    margin-bottom: rem(22px);
-  }
-
-  &__link {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: rgba($greentext, .8);
-    position: relative;
-    padding-left: 24px;
-
-    &:hover, &:active {
-      color: rgba($greentext, .8);
+    @media (max-width: 1200px) {
+      font-size: rem(13px);
     }
-  }
-
-  &__icon {
-    fill: $lightgreen;
-    position: absolute;
-    left: 0;
-    width: 24px;
-
-    &--sk {
-      height: 24px;
-    }
-
-    &--tel {
-      height: 20px;
-    }
-
-    &--email {
-      height: 16px;
-    }
-
-    &--marker {
-      height: 21px;
-    }
-  }
-
-  &__span {
-    display: inline-block;
-    margin-left: rem(10px);
   }
 }

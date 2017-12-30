@@ -6,47 +6,55 @@ html
         title Добро пожаловать
     body
         .intro
-            .intro__card#intro_card
-                .card.card--front
-                    .card__content
-                        .card__user
-                        .card__socials
-                    .card__btns
-                        a(href="/works.html").btn.btn--card.btn--green Мои работы
-                        a(href="/about.html").btn.btn--card.btn--green Обо мне
-                        a(href="/blog.html").btn.btn--card.btn--green Блог
-                .card.card--back
-                    form.card__tag-form
-                        .card__content.card__content--form
-                            h4.card__title.title.title--middle.title--white Авторизуйтесь
-                            label.card__label
-                                input(name='login' type='text' placeholder='Логин' id="login").card__label-input
-                                .card__label-icon
-                                    svg.icon.icon-login
-                                        use(xlink:href="#login")
-                            label.card__label
-                                input(name='password' type='password' placeholder='Пароль' id="password").card__label-input
-                                .card__label-icon
-                                    svg.icon.icon-password
-                                        use(xlink:href="#password")
-                            label.card__label.card__label--checkbox
-                                input(type="checkbox" name="human" hidden).card__label-input
-                                span.card__label-fake.card__label-fake--checkbox
-                                    svg.icon.icon-check
-                                        use(xlink:href="#check")
-                                span.card__label-text Я человек
-                            .card__radios
-                                span.card__radios-title Вы точно не робот?
-                                label.card__label.card__label--radio
-                                    input(type="radio" name="sure" hidden).card__label-input
-                                    span.card__label-fake.card__label-fake--radio
-                                    span.card__label-text Да
-                                label.card__label.card__label--radio
-                                    input(type="radio" name="sure" checked hidden).card__label-input
-                                    span.card__label-fake.card__label-fake--radio
-                                    span.card__label-text Не уверен
-                        .card__btns.card__btns--half
-                            button.btn.btn--card.btn--green#front На главную
-                            button.btn.btn--card.btn--green Войти
+            .Background
+                canvas.Background-canvas
+            .intro__card
+                .card
+                    .card__front
+                        .card__inner
+                            .card__content
+                                .card__user
+                                .card__socials
+                            .card__btns
+                                a(href="/works.html").btn.btn--card.btn--green Мои работы
+                                a(href="/about.html").btn.btn--card.btn--green Обо мне
+                                a(href="/blog.html").btn.btn--card.btn--green Блог
+                    .card__back
+                        .card__inner
+                            form.card__tag-form
+                                .card__content.card__content--form
+                                    h4.card__title.title.title--middle.title--white Авторизуйтесь
+                                    label.card__label
+                                        input(name='login' type='text' placeholder='Логин' id="login").card__label-input
+                                        .card__label-icon
+                                            svg.icon.icon-login
+                                                use(xlink:href="#login")
+                                    label.card__label
+                                        input(name='password' type='password' placeholder='Пароль' id="password").card__label-input
+                                        .card__label-icon
+                                            svg.icon.icon-password
+                                                use(xlink:href="#password")
+                                    label.card__label.card__label--checkbox
+                                        input(type="checkbox" name="human" hidden).card__label-input
+                                        span.card__label-fake.card__label-fake--checkbox
+                                            svg.icon.icon-check
+                                                use(xlink:href="#check")
+                                        span.card__label-text Я человек
+                                    .card__radios
+                                        span.card__radios-title Вы точно не робот?
+                                        label.card__label.card__label--radio
+                                            input(type="radio" name="sure" hidden).card__label-input
+                                            span.card__label-fake.card__label-fake--radio
+                                            span.card__label-text Да
+                                        label.card__label.card__label--radio
+                                            input(type="radio" name="sure" checked hidden).card__label-input
+                                            span.card__label-fake.card__label-fake--radio
+                                            span.card__label-text Не уверен
+                                .card__btns.card__btns--half
+                                    button.btn.btn--card.btn--green#front На главную
+                                    button.btn.btn--card.btn--green Войти
             a.intro__btn.btn.btn--transparent#front_btn Авторизоваться
-            .intro__footer &copy; Феер Александр | создано с любовью в Loftschool | 2017
+            .intro__footer
+                span.intro__footer-name &copy; Феер Александр
+                span.intro__footer-company создано с любовью в LoftSchool
+                span.intro__footer-year 2017

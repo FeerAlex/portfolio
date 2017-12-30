@@ -1,32 +1,66 @@
+$black: #000;
 $white: #fff;
 
 .header {
-    background: url("../../img/bg.jpg");
-    background-size: cover;
-    height: 620px;
+    min-height: 620px;
+    height: 100vh;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40%;
+        background: linear-gradient(rgba($black, .3), rgba($black,0));
+        z-index: 1;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 120%;
+        background: url("../../img/water.jpg");
+        background-size: cover;
+    }
 
     &__socials {
         position: absolute;
         top: 30px;
         left: 30px;
-        z-index: 2;
+        z-index: 5;
+
+        @media (max-width: 480px) {
+            top: 15px;
+            left: 12px;
+        }
     }
 
     &__user {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        left: 0;
+        right: 0;
+        text-align: center;
         margin-top: -40px;
-        z-index: 2;
+        z-index: 5;
     }
 
     &__burger {
         position: absolute;
         top: 30px;
         right: 30px;
-        z-index: 2;
+        z-index: 5;
+
+        @media (max-width: 480px) {
+            top: 10px;
+            right: 12px;
+        }
 
         &-icon {
             fill: $white;
@@ -38,7 +72,7 @@ $white: #fff;
     &__arrow {
         fill: $white;
         position: absolute;
-        z-index: 2;
+        z-index: 5;
         bottom: 85px;
         left: 50%;
         transform: translateX(-50%);
@@ -56,12 +90,10 @@ $white: #fff;
 
     &__portfolio-icon {
         position: absolute;
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%,-50%);
         width: 100%;
         height: 50%;
         fill: $white;
         opacity: .12;
+        z-index: 4;
     }
 }

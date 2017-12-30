@@ -1,14 +1,15 @@
 - var title = document.title
-.header__socials
+.header__bg.js-header__bg
+.header__socials.js-header__socials
 .header__burger
     svg.header__burger-icon
         use(xlink:href="#hamburger")
-.header__user
+.header__user.js-header__user
 
 if title != 'Блог'
     .header__arrow
         a(href="#0").header__arrow-link
             svg.header__arrow-icon
                 use(xlink:href="#arrow_down")
-    svg.header__portfolio-icon
+    svg.header__portfolio-icon.js-header__portfolio-icon
         use(xlink:href="#portfolio_header")
