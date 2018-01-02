@@ -1,0 +1,65 @@
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: url('../../img/water.jpg') center no-repeat;
+    background-size: cover;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(#6c9c5a, .87);
+    }
+
+    &__spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    &__percents {
+        text-align: center;
+        font-weight: bold;
+        font-size: 12px;
+        color: #fff;
+    }
+}
+
+$max: 3;
+$time: 2s;
+
+.preloader__icon {
+
+    &-group {
+        stroke: #fff;
+    }
+
+    &-line {
+        @for $item from 0 through $max - 1 {
+            &:nth-child(#{$item + 1}){
+              transform: translate(0, #{$item * 23}px);
+              animation-delay: #{$item * 0.28s};
+            }
+        }
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100px;
+        animation: dash $time ease-in-out infinite;
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 100px;
+    }
+    100% {
+        stroke-dashoffset: -100px;
+    }
+}

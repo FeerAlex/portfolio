@@ -2,6 +2,7 @@ import 'normalize.css';
 import './works.scss';
 
 /* COMPONENTS */
+import Preloader from '../../components/preloader';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Slider from '../../components/slider';
@@ -19,6 +20,7 @@ import '../../img/icons/about_header.svg';
 import '../../img/icons/quote.svg';
 import '../../img/icons/arrow_down.svg';
 
+let preloader = new Preloader();
 let header = new Header();
 let footer = new Footer();
 let slider = new Slider();
@@ -26,10 +28,13 @@ let slider = new Slider();
 let wrapper = document.querySelector('#wrapper');
 let main = document.querySelector('.main');
 let blurJs = document.querySelector('.blur');
+let body = document.querySelector('body');
 
 wrapper.insertBefore(header.elem, main);
 blurJs.appendChild(footer.elem);
 document.querySelector('.work__slider').appendChild(slider.elem);
+body.appendChild(preloader.elem);
+preloader.init();
 
 console.log('in works.js');
 
@@ -57,4 +62,10 @@ blur.set();
 
 window.onresize = function() {
   blur.set();
+};
+
+let blurArrow = document.querySelector('.blur__arrow-link');
+blurArrow.onclick = (e) => {
+  e.preventDefault();
+  $('html,body').stop().animate({ scrollTop: header.elem.offsetHeight }, 1000);
 };
