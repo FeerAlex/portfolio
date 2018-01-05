@@ -238,3 +238,13 @@ $greenbtn:      #6c9c5a;
         }
     }
 }
+
+.letter-span {
+    display: inline-block;
+    opacity: 0;
+
+    &--show {
+        opacity: 1;
+        animation: bounceIn 1s;
+    }
+}

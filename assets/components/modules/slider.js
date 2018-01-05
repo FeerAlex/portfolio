@@ -39,8 +39,8 @@ export default class Slider {
 
     // Элементы слайдера, которые будут меняться
     let screen = $('.slider__screen-img');
-    let title = $('.slider__title');
-    let skills = $('.slider__skills');
+    let title = document.querySelector('.slider__title');
+    let skills = document.querySelector('.slider__skills');
     let link = $('.slider__link');
 
     // Значения, которые будут подставляться в слайдер
@@ -48,8 +48,6 @@ export default class Slider {
     let project = items.eq(this.counter).attr('data-title');
     let tech    = items.eq(this.counter).attr('data-tech');
     let site    = items.eq(this.counter).attr('data-link');
-
-    console.log(project);
 
     screen.fadeOut(function(){
       fadeOut.resolve();
@@ -62,10 +60,60 @@ export default class Slider {
     });
 
     loaded.done(function() {
-      title.text(project);
-      skills.text(tech);
+      Slider.wordAnimation(title, project); // Анимация названия
+      Slider.wordAnimation(skills, tech);   // Анимация скилов
       link.attr('href', site);
       screen.fadeIn();
+    });
+  }
+
+  wordAnimation(container, text) {
+    let string = text.trim();           // убираем пробелы слева и справа
+    let stringArray = string.split(''); // разбиваем слово на массив
+    let word = '';
+    let animationState = $.Deferred();  // определение окончания анимации
+    let Slider = this;
+
+    Array.from(stringArray).map((letter) => { // проходим по каждой букве
+      let letterHtml = '';
+
+      if(letter != ' ') {
+        letterHtml = '<span class="letter-span">' + letter + '</span>';
+      } else {
+        letterHtml = '<span class="letter-span--space">' + letter + '</span>';
+      }
+
+      word += letterHtml;
+    });
+
+    container.innerHTML = word;
+
+    let letter = container.querySelectorAll('.letter-span'),
+      count = 0,
+      timer,
+      duration = 600 / stringArray.length;
+    
+    function showLetters () {
+      let currentLetter = $(letter).eq(count);
+
+      currentLetter.addClass('letter-span--show');
+
+      console.log(count);
+
+      if (count == stringArray.length) {
+        animationState.resolve();
+        console.log('finish!');
+        clearTimeout(timer);
+        count = 0;
+      } else {
+        count++;
+        timer = setTimeout(showLetters, duration);
+      }
+    }
+
+    showLetters();
+
+    animationState.done(function() {
       Slider.process = false;
     });
   }
