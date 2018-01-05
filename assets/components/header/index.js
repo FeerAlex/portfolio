@@ -25,16 +25,24 @@ export default class Header {
     this.elem.className = 'header';
     this.elem.innerHTML = template(opt);
 
-    let arrow = this.elem.querySelector('.header__arrow-link');
-    arrow.onclick = (e) => {
-      e.preventDefault();
-      $('html,body').stop().animate({ scrollTop: this.elem.offsetHeight }, 1000);
-    };
-
     const socials = this.elem.querySelector('.js-header__socials');
     const bg = this.elem.querySelector('.js-header__bg');
     const userBlock = this.elem.querySelector('.js-header__user');
     const sectionText = this.elem.querySelector('.js-header__portfolio-icon');
+    const arrow = this.elem.querySelector('.header__arrow-link');
+    const burger = this.elem.querySelector('.js-burger');
+    const overlay = this.elem.querySelector('.js-overlay');
+
+    burger.onclick = () => {
+      burger.classList.toggle('burger--show');
+      overlay.classList.toggle('overlay--show');
+    };
+    if (arrow) {
+      arrow.onclick = (e) => {
+        e.preventDefault();
+        $('html,body').stop().animate({ scrollTop: this.elem.offsetHeight }, 1000);
+      };
+    }
 
     userBlock.appendChild(user.elem);
     socials.appendChild(social.elem);
