@@ -20,7 +20,6 @@ import '../../img/icons/about_header.svg';
 import '../../img/icons/quote.svg';
 import '../../img/icons/arrow_down.svg';
 
-let preloader = new Preloader();
 let header = new Header();
 let footer = new Footer();
 let slider = new Slider();
@@ -28,13 +27,10 @@ let slider = new Slider();
 let wrapper = document.querySelector('#wrapper');
 let main = document.querySelector('.main');
 let blurJs = document.querySelector('.blur');
-let body = document.querySelector('body');
 
 wrapper.insertBefore(header.elem, main);
 blurJs.appendChild(footer.elem);
 document.querySelector('.work__slider').appendChild(slider.elem);
-body.appendChild(preloader.elem);
-preloader.init();
 
 console.log('in works.js');
 
@@ -69,3 +65,10 @@ blurArrow.onclick = (e) => {
   e.preventDefault();
   $('html,body').stop().animate({ scrollTop: header.elem.offsetHeight }, 1000);
 };
+
+let preloader = new Preloader();
+
+$(document).ready(function() {
+  console.log('ready!');
+  preloader.init();
+});

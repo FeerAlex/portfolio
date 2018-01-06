@@ -1,14 +1,10 @@
 import './preloader.scss';
-import template from './preloader.pug';
 
 export default class Preloader {
-  constructor(opt) {
-    this.elem = document.createElement('div');
-    this.elem.className = 'preloader';
-    this.elem.innerHTML = template(opt);
-
+  constructor() {
     this.percentsTotal = 0;
-    this.percents = this.elem.querySelector('.preloader__percents');
+    this.percents = document.querySelector('.preloader__percents');
+    this.elem = document.querySelector('.preloader');
 
     this.imgPath = $('*').map(function(ndx, el) {
       let bg = $(el).css('background-image'),

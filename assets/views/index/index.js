@@ -1,9 +1,9 @@
 import 'normalize.css';
 import './index.scss';
 
-import '../../components/water';
-
 /* COMPONENTS */
+import Preloader from '../../components/preloader';
+import '../../components/water';
 import User from '../../components/user';
 import Socials from '../../components/socials';
 
@@ -51,3 +51,10 @@ function reverseCard(e) {
   let intro = document.querySelector('.intro');
   intro.classList.toggle('intro--toggle');
 }
+
+let preloader = new Preloader();
+
+$(document).ready(function() {
+  console.log('ready!');
+  preloader.init();
+});

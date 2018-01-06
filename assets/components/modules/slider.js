@@ -98,11 +98,8 @@ export default class Slider {
 
       currentLetter.addClass('letter-span--show');
 
-      console.log(count);
-
       if (count == stringArray.length) {
         animationState.resolve();
-        console.log('finish!');
         clearTimeout(timer);
         count = 0;
       } else {

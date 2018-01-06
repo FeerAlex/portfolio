@@ -58,3 +58,13 @@ html
                 span.intro__footer-name &copy; Феер Александр
                 span.intro__footer-company создано с любовью в LoftSchool
                 span.intro__footer-year 2017
+        .preloader
+            .preloader__spinner
+                .preloader__percents 0
+                svg(viewBox="0 0 80 80" width="40px" height="40px").preloader__icon
+                    symbol(id="s-line")
+                        path(x="0" y="0" fill="none" stroke-width="5" d="M0 38.005c6.663 0 6.663 7.801 13.327 7.801 6.665 0 6.665-7.801 13.33-7.801 6.667 0 6.667 7.801 13.334 7.801 6.666 0 6.666-7.801 13.331-7.801 6.67 0 6.67 7.801 13.339 7.801S73.33 38.005 80 38.005")
+                    g.preloader__icon-group
+                        use(xlink:href="#s-line").preloader__icon-line
+                        use(xlink:href="#s-line").preloader__icon-line
+                        use(xlink:href="#s-line").preloader__icon-line

@@ -26,6 +26,15 @@ module.exports = {
     'index': PATHS.source + '/views/index/index.js',
     'works': PATHS.source + '/views/works/works.js',
   },
+  resolve: {
+    alias: {
+      // 'vue$': 'vue/dist/vue.esm.js',
+      // 'styles': path.resolve(__dirname, 'src/styles/components'),
+      'img': path.resolve(__dirname, 'assets/img'),
+      // 'fonts': path.resolve(__dirname, 'src/assets/fonts'),
+    },
+    // extensions: ['*', '.js', '.vue', '.json']
+  },
   devServer: {
     historyApiFallback: true,
     noInfo: true,

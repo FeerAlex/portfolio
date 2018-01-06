@@ -11,6 +11,7 @@ import '../../img/icons/about_header.svg';
 import '../../img/icons/about_bg.svg';
 
 /* COMPONENTS */
+import Preloader from '../../components/preloader';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Map    from '../../components/map';
@@ -39,3 +40,10 @@ Array.from(ellipses).map((ellipse) => {
 });
 
 console.log('in about.js');
+
+let preloader = new Preloader();
+
+$(document).ready(function() {
+  console.log('ready!');
+  preloader.init();
+});
