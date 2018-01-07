@@ -106,6 +106,15 @@ module.exports = {
               },
             },
             'sass-loader',
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: [
+                  './assets/scss/colors.scss',
+                  './assets/scss/mixins.scss',
+                ],
+              },
+            },
           ],
         }),
       },
@@ -200,6 +209,11 @@ if (prod) {
     new FaviconsWebpackPlugin({
       logo: PATHS.source + '/img/leaf.png',
       prefix: 'icons-[name]/',
+    }),
+    new OptimizeCssAssetsPlugin({
+      cssProcessor: require('cssnano'),
+      cssProcessorOptions: { discardComments: { removeAll: true } },
+      canPrint: true,
     }),
   ]);
 }
