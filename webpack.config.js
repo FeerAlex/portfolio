@@ -196,13 +196,6 @@ module.exports = {
 if (prod) {
   module.exports.plugins = (module.exports.plugins || []).concat([
     new CleanWebpackPlugin(PATHS.build),
-    new OptimizeCssAssetsPlugin({
-      cssProcessorOptions:{
-        discardComments:{
-          removeAll: true,
-        },
-      },
-    }),
     new UglifyJsPlugin(),
     new FaviconsWebpackPlugin({
       logo: PATHS.source + '/img/leaf.png',

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=dev webpack-dev-server",
-    "build": "cross-env NODE_ENV=prod webpack",
+    "build": "cross-env NODE_ENV=prod webpack -p",
     "serv": "static build",
     "test:lint": "eslint . --cache"
   },
