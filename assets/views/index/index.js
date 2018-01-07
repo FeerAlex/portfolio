@@ -1,9 +1,19 @@
 import 'normalize.css';
 import './index.scss';
 
+
+let isMoblie = function() {
+  return window.screen.width < 768;
+};
+
+if(!isMoblie()) {
+  require.ensure(['../../components/water'], function(require) {
+    require('../../components/water');
+  });
+}
+
 /* COMPONENTS */
 import Preloader from '../../components/preloader';
-import '../../components/water';
 import User from '../../components/user';
 import Socials from '../../components/socials';
 
