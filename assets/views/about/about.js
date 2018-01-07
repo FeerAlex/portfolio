@@ -36,7 +36,15 @@ Array.from(ellipses).map((ellipse) => {
   let svg = ellipse.querySelector('svg');
   let circle  = new Skill(150, 150, svg, percent / 100);
 
-  circle.draw();
+  $(window).scroll(function() {
+    let skills = document.querySelector('.about__right');
+    
+    if(skills.getBoundingClientRect().top <= 0) {
+      if(!circle.animate) {
+        circle.draw();
+      }
+    }
+  });
 });
 
 console.log('in about.js');

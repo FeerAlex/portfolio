@@ -6,6 +6,7 @@ export default class Skill {
     const cy = height / 2;
     this.length = 2 * radius * Math.PI;
     this.percent = percent;
+    this.animate = false;
     
     this.s.attr({
       width,
@@ -42,5 +43,6 @@ export default class Skill {
         strokeDashoffset: val,
       });
     }, 700, window.mina.easeinout);
+    this.animate = true;
   }
 }
