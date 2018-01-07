@@ -40,7 +40,7 @@ export default class Header {
     if (arrow) {
       arrow.onclick = (e) => {
         e.preventDefault();
-        $('html,body').stop().animate({ scrollTop: this.elem.offsetHeight }, 1000);
+        $('html,body').stop().animate({ scrollTop: document.documentElement.clientHeight }, 1000);
       };
     }
 

@@ -63,7 +63,7 @@ window.onresize = function() {
 let blurArrow = document.querySelector('.blur__arrow-link');
 blurArrow.onclick = (e) => {
   e.preventDefault();
-  $('html,body').stop().animate({ scrollTop: header.elem.offsetHeight }, 1000);
+  $('html,body').stop().animate({ scrollTop: document.documentElement.clientHeight }, 1000);
 };
 
 let preloader = new Preloader();
@@ -71,4 +71,13 @@ let preloader = new Preloader();
 $(document).ready(function() {
   console.log('ready!');
   preloader.init();
+});
+
+import Request from '../../components/modules/sendMessage';
+let form = $('form');
+let url = 'submit_test.php';
+let submit = new Request(form, url);
+form.on('submit', function(e) {
+  e.preventDefault();
+  submit.request();
 });

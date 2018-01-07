@@ -1,0 +1,43 @@
+.message {
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px 20px 20px;
+    width: 280px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(-50%,-50%);
+    z-index: 20;
+    text-align: center;
+    transition: opacity .3s ease-in-out;
+
+    &__text {
+        font-family: 'Roboto';
+        color: #373e42;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .button {
+        font-family: 'Roboto';
+        font-size: 16px;
+        border-radius: 5px;
+        background-color: rgb(108, 156, 90);
+        text-align: center;
+        color: #fff;
+        border: none;
+        outline: none;
+        font-weight: 500;
+        padding: 11px 20px;
+        cursor: pointer;
+    }
+
+    &--show {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .3s ease-in-out;
+    }
+}

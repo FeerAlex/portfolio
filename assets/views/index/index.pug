@@ -21,16 +21,16 @@ html
                                 a(href="/blog.html").btn.btn--card.btn--green Блог
                     .card__back
                         .card__inner
-                            form.card__tag-form
+                            form(method="post" action="").card__tag-form#auth
                                 .card__content.card__content--form
                                     h4.card__title.title.title--middle.title--white Авторизуйтесь
                                     label.card__label
-                                        input(name='login' type='text' placeholder='Логин' id="login").card__label-input
+                                        input(name='login' type='text' placeholder='Логин' id="login" data-qtip="Вы не ввели логин").card__label-input
                                         .card__label-icon
                                             svg.icon.icon-login
                                                 use(xlink:href="#login")
                                     label.card__label
-                                        input(name='password' type='password' placeholder='Пароль' id="password").card__label-input
+                                        input(name='password' type='password' placeholder='Пароль' id="password" data-qtip="Вы не ввели пароль").card__label-input
                                         .card__label-icon
                                             svg.icon.icon-password
                                                 use(xlink:href="#password")
@@ -43,11 +43,11 @@ html
                                     .card__radios
                                         span.card__radios-title Вы точно не робот?
                                         label.card__label.card__label--radio
-                                            input(type="radio" name="sure" hidden).card__label-input
+                                            input(type="radio" name="sure" hidden value="yes").card__label-input
                                             span.card__label-fake.card__label-fake--radio
                                             span.card__label-text Да
                                         label.card__label.card__label--radio
-                                            input(type="radio" name="sure" checked hidden).card__label-input
+                                            input(type="radio" name="sure" checked hidden value="no").card__label-input
                                             span.card__label-fake.card__label-fake--radio
                                             span.card__label-text Не уверен
                                 .card__btns.card__btns--half

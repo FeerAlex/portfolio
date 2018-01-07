@@ -36,6 +36,15 @@ document.querySelector('.card__socials').appendChild(socials.elem);
 
 let btnFront1 = document.getElementById('front');
 let btnFront2 = document.getElementById('front_btn');
+let intro = document.querySelector('.intro');
+
+intro.addEventListener('click', function(e) {
+  let tar = e.target;
+  
+  if(tar.classList.contains('intro')) {
+    this.classList.remove('intro--toggle');
+  }
+});
 
 btnFront1.addEventListener('click', function(e) {
   reverseCard(e);
@@ -48,7 +57,6 @@ btnFront2.addEventListener('click', function(e) {
 function reverseCard(e) {
   e.preventDefault();
 
-  let intro = document.querySelector('.intro');
   intro.classList.toggle('intro--toggle');
 }
 
@@ -57,4 +65,14 @@ let preloader = new Preloader();
 $(document).ready(function() {
   console.log('ready!');
   preloader.init();
+});
+
+
+import Request from '../../components/modules/sendAuth';
+let form = $('form');
+let url = 'submit_test.php';
+let submit = new Request(form, url);
+form.on('submit', function(e) {
+  e.preventDefault();
+  submit.request();
 });

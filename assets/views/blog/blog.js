@@ -41,10 +41,10 @@ let articles = $('.article__item');
 let links = $('.sidebar__item');
 
 links.on('click', function(e) {
-  let $this = $(this);
-  let dataLink = $this.data('link');
-  let article = articles.filter('[data-link="' + dataLink + '"]');
   e.preventDefault();
+
+  let index = $(this).index();
+  let article = articles.eq(index);
   $('html,body').stop().animate({ scrollTop: article.offset().top }, 1000);
 });
 
@@ -66,12 +66,11 @@ $(window).scroll(function() {
   let scrollTop = $(window).scrollTop();
   let sidebarOffset = sidebar.getBoundingClientRect().top;
 
-  articles.each(function() {
+  articles.each(function(index) {
     let $this = $(this);
 
     if(checkDistance(scrollTop, $this)) {
-      let dataLink = $this.data('link');
-      let link = links.filter('[data-link="' + dataLink + '"]');
+      let link = links.eq(index);
       
       links.removeClass('sidebar__item--active');
       link.addClass('sidebar__item--active');
