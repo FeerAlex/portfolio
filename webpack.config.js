@@ -26,6 +26,15 @@ module.exports = {
     'index': PATHS.source + '/views/index/index.js',
     'works': PATHS.source + '/views/works/works.js',
   },
+  resolve: {
+    alias: {
+      // 'vue$': 'vue/dist/vue.esm.js',
+      // 'styles': path.resolve(__dirname, 'src/styles/components'),
+      'img': path.resolve(__dirname, 'assets/img'),
+      // 'fonts': path.resolve(__dirname, 'src/assets/fonts'),
+    },
+    // extensions: ['*', '.js', '.vue', '.json']
+  },
   devServer: {
     historyApiFallback: true,
     noInfo: true,
@@ -97,6 +106,15 @@ module.exports = {
               },
             },
             'sass-loader',
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: [
+                  './assets/scss/colors.scss',
+                  './assets/scss/mixins.scss',
+                ],
+              },
+            },
           ],
         }),
       },
@@ -187,17 +205,15 @@ module.exports = {
 if (prod) {
   module.exports.plugins = (module.exports.plugins || []).concat([
     new CleanWebpackPlugin(PATHS.build),
-    new OptimizeCssAssetsPlugin({
-      cssProcessorOptions:{
-        discardComments:{
-          removeAll: true,
-        },
-      },
-    }),
     new UglifyJsPlugin(),
     new FaviconsWebpackPlugin({
       logo: PATHS.source + '/img/leaf.png',
       prefix: 'icons-[name]/',
+    }),
+    new OptimizeCssAssetsPlugin({
+      cssProcessor: require('cssnano'),
+      cssProcessorOptions: { discardComments: { removeAll: true } },
+      canPrint: true,
     }),
   ]);
 }

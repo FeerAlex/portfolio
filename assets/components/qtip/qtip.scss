@@ -1,0 +1,30 @@
+.qtip {
+    position: absolute;
+    top: calc(100% + 14px);
+    margin: auto;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    border-radius: 5px;
+    background-color: rgb(228, 72, 69);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    padding: 11.5px 10px;
+    max-width: 180px;
+    text-align: center;
+
+    &__inner {
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            background-color: #e44845;
+            width: 20px;
+            height: 20px;
+            left: 50%;
+            top: -17px;
+            transform: translateX(-50%) rotate(45deg);
+        }
+    }
+}

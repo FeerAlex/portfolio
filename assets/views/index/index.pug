@@ -21,16 +21,16 @@ html
                                 a(href="/blog.html").btn.btn--card.btn--green Блог
                     .card__back
                         .card__inner
-                            form.card__tag-form
+                            form(method="post" action="").card__tag-form#auth
                                 .card__content.card__content--form
                                     h4.card__title.title.title--middle.title--white Авторизуйтесь
                                     label.card__label
-                                        input(name='login' type='text' placeholder='Логин' id="login").card__label-input
+                                        input(name='login' type='text' placeholder='Логин' id="login" data-qtip="Вы не ввели логин").card__label-input
                                         .card__label-icon
                                             svg.icon.icon-login
                                                 use(xlink:href="#login")
                                     label.card__label
-                                        input(name='password' type='password' placeholder='Пароль' id="password").card__label-input
+                                        input(name='password' type='password' placeholder='Пароль' id="password" data-qtip="Вы не ввели пароль").card__label-input
                                         .card__label-icon
                                             svg.icon.icon-password
                                                 use(xlink:href="#password")
@@ -43,11 +43,11 @@ html
                                     .card__radios
                                         span.card__radios-title Вы точно не робот?
                                         label.card__label.card__label--radio
-                                            input(type="radio" name="sure" hidden).card__label-input
+                                            input(type="radio" name="sure" hidden value="yes").card__label-input
                                             span.card__label-fake.card__label-fake--radio
                                             span.card__label-text Да
                                         label.card__label.card__label--radio
-                                            input(type="radio" name="sure" checked hidden).card__label-input
+                                            input(type="radio" name="sure" checked hidden value="no").card__label-input
                                             span.card__label-fake.card__label-fake--radio
                                             span.card__label-text Не уверен
                                 .card__btns.card__btns--half
@@ -58,3 +58,13 @@ html
                 span.intro__footer-name &copy; Феер Александр
                 span.intro__footer-company создано с любовью в LoftSchool
                 span.intro__footer-year 2017
+        .preloader
+            .preloader__spinner
+                .preloader__percents 0
+                svg(viewBox="0 0 80 80" width="40px" height="40px").preloader__icon
+                    symbol(id="s-line")
+                        path(x="0" y="0" fill="none" stroke-width="5" d="M0 38.005c6.663 0 6.663 7.801 13.327 7.801 6.665 0 6.665-7.801 13.33-7.801 6.667 0 6.667 7.801 13.334 7.801 6.666 0 6.666-7.801 13.331-7.801 6.67 0 6.67 7.801 13.339 7.801S73.33 38.005 80 38.005")
+                    g.preloader__icon-group
+                        use(xlink:href="#s-line").preloader__icon-line
+                        use(xlink:href="#s-line").preloader__icon-line
+                        use(xlink:href="#s-line").preloader__icon-line

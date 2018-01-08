@@ -2,8 +2,22 @@
 .header__bg.js-header__bg
 .header__socials.js-header__socials
 .header__burger
-    svg.header__burger-icon
-        use(xlink:href="#hamburger")
+    .burger.js-burger
+        span.burger__line
+        span.burger__line
+        span.burger__line
+.overlay.js-overlay
+    nav.overlay__menu
+        ul.overlay__list
+            li.overlay__item
+                a(href="/works.html").overlay__link Мои работы
+            li.overlay__item
+                a(href="/blog.html").overlay__link Блог
+            li.overlay__item
+                a(href="/about.html").overlay__link Обо мне
+            li.overlay__item
+                a(href="/").overlay__link Авторизация
+</div>
 .header__user.js-header__user
 
 if title != 'Блог'

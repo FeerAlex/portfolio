@@ -1,21 +1,37 @@
 .slider__desc
     .slider__content
-        h3.slider__title.title.title--middle Сайт школы онлайн образования
+        h3.slider__title.title.title--middle Автосервис motor21
         .slider__skills HTML, CSS, JAVASCRIPT
-        a(href="#0").slider__link
+        a(href="http://sto.motor21.ru/" target="_blank").slider__link
             svg.slider__link-icon
                 use(xlink:href="#link")
             span.slider__link-span Посмотреть сайт
 .slider__screen
     img(src=require("../../img/slider/site-1.png")).slider__screen-img
 .slider__switch
-    .slider__switch-col
-        img(src=require("../../img/slider/site-2.jpg")).slider__switch-img
-        a(href="#0").slider__switch-link.slider__switch-link--prev
+    .slider__switch-col.slider__switch-col--left
+        ul.slider__switch-list
+            li(data-title="Автосервис motor21" data-tech="HTML, CSS, Javascript" data-link="http://sto.motor21.ru/").slider__switch-item
+                img(src=require("../../img/slider/site-1.png")).slider__switch-img
+            li(data-title="Воркадиум" data-tech="HTML, CSS, Javascript" data-link="http://feeralex.tmweb.ru/").slider__switch-item
+                img(src=require("../../img/slider/site-2.png")).slider__switch-img
+            li(data-title="Mr. Burger" data-tech="HTML, CSS, Javascript, PHP" data-link="http://cw08681.tmweb.ru/").slider__switch-item
+                img(src=require("../../img/slider/site-3.png")).slider__switch-img
+            li(data-title="Л.Е.В" data-tech="HTML, CSS" data-link="http://v5.master-css.com/Aleksandr274/exam3%20v%20ot%20Seregi/index.html").slider__switch-item.slider__switch-item--active
+                img(src=require("../../img/slider/site-4.png")).slider__switch-img
+        a(href="#0" data-).slider__switch-link.slider__switch-link--down
             svg.slider__switch-icon
                 use(xlink:href="#portf_arrow_down")
-    .slider__switch-col
-        img(src=require("../../img/slider/site-3.jpg")).slider__switch-img
-        a(href="#0").slider__switch-link.slider__switch-link--next
+    .slider__switch-col.slider__switch-col--right
+        ul.slider__switch-list
+            li(data-title="Проект 1").slider__switch-item
+                img(src=require("../../img/slider/site-1.png")).slider__switch-img
+            li(data-title="Проект 2").slider__switch-item.slider__switch-item--active
+                img(src=require("../../img/slider/site-2.png")).slider__switch-img
+            li(data-title="Проект 3").slider__switch-item
+                img(src=require("../../img/slider/site-3.png")).slider__switch-img
+            li(data-title="Проект 4").slider__switch-item
+                img(src=require("../../img/slider/site-4.png")).slider__switch-img
+        a(href="#0").slider__switch-link.slider__switch-link--up
             svg.slider__switch-icon
                 use(xlink:href="#portf_arrow_up")

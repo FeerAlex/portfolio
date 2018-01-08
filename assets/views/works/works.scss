@@ -1,7 +1,4 @@
-@import "../../scss/mixins";
-@import "../../scss/colors";
 @import "../../scss/main";
-@import "../../scss/title";
 
 $headercolor:   #93c42e;
 $bgcolor:       #f8f9f5;
@@ -331,7 +328,7 @@ $post:          #373e42;
     }
 
     &__body {
-        background-color: rgba(#dadbd6, .4);
+        background-color: rgba(#dadbd6, .6);
         padding: 30px 20px 12px 20px;
 
         @media (max-width: 480px) {
@@ -348,6 +345,12 @@ $post:          #373e42;
         border: none;
         outline: none;
         margin-bottom: 20px;
+        border: 1px solid $white;
+
+        &.error {
+            border-color: $red;
+            background: lighten($red, 50%);
+        }
 
         @include placeholder {
             color: $comment;
@@ -367,6 +370,12 @@ $post:          #373e42;
         padding: 13px 20px 20px;
         border: none;
         outline: none;
+        border: 1px solid $white;
+
+        &.error {
+            border-color: $red;
+            background: lighten($red, 50%);
+        }
     }
 
     &__controls {

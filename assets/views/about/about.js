@@ -11,6 +11,7 @@ import '../../img/icons/about_header.svg';
 import '../../img/icons/about_bg.svg';
 
 /* COMPONENTS */
+import Preloader from '../../components/preloader';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Map    from '../../components/map';
@@ -35,7 +36,22 @@ Array.from(ellipses).map((ellipse) => {
   let svg = ellipse.querySelector('svg');
   let circle  = new Skill(150, 150, svg, percent / 100);
 
-  circle.draw();
+  $(window).scroll(function() {
+    let skills = document.querySelector('.about__right');
+    
+    if(skills.getBoundingClientRect().top <= 0) {
+      if(!circle.animate) {
+        circle.draw();
+      }
+    }
+  });
 });
 
 console.log('in about.js');
+
+let preloader = new Preloader();
+
+$(document).ready(function() {
+  console.log('ready!');
+  preloader.init();
+});

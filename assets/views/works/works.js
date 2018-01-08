@@ -2,6 +2,7 @@ import 'normalize.css';
 import './works.scss';
 
 /* COMPONENTS */
+import Preloader from '../../components/preloader';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Slider from '../../components/slider';
@@ -58,3 +59,25 @@ blur.set();
 window.onresize = function() {
   blur.set();
 };
+
+let blurArrow = document.querySelector('.blur__arrow-link');
+blurArrow.onclick = (e) => {
+  e.preventDefault();
+  $('html,body').stop().animate({ scrollTop: document.documentElement.clientHeight }, 1000);
+};
+
+let preloader = new Preloader();
+
+$(document).ready(function() {
+  console.log('ready!');
+  preloader.init();
+});
+
+import Request from '../../components/modules/sendMessage';
+let form = $('form');
+let url = 'submit_test.php';
+let submit = new Request(form, url);
+form.on('submit', function(e) {
+  e.preventDefault();
+  submit.request();
+});
