@@ -58,17 +58,18 @@ export default class Request {
   }
 
   request() {
-    let serverAnswer = this.ajax($(this.form), this.url);
+    let Request = this;
+    let serverAnswer = Request.ajax($(Request.form), Request.url);
       
     if(serverAnswer) {
       serverAnswer.done(function(ans) {
         
-        if(ans.status === 'OK') {
-          this.message.text(ans.text);
-          this.message.show();
+        if(ans.status === 'ok') {
+          Request.message.text(ans.message);
+          Request.message.show();
         } else {
-          this.message.text(ans.text);
-          this.message.show();
+          Request.message.text(ans.message);
+          Request.message.show();
         }
       });
     }

@@ -3,6 +3,7 @@ import template from './map.pug';
 
 /* COMPONENTS */
 import Contacts from '../../components/contacts';
+import './map-marker.png';
 
 let contacts = new Contacts();
 
@@ -81,7 +82,7 @@ export default class Map {
       position: {lat: 56.138432, lng: 47.272868},
       map: this.map,
       title: 'Чебоксары, ул. Калинина',
-      icon: '/assets/img/icons/map-marker.svg',
+      icon: '../images/map-marker.png',
     });
   }
 }
