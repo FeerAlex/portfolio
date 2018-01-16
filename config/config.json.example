@@ -1,0 +1,25 @@
+{
+  "server": {
+    "site": "http://localhost:1337",
+    "port": "1337"
+  },
+  "db": {
+    "host": "localhost",
+    "port": "27017",
+    "name": "example",
+    "user": "",
+    "password": ""
+  },
+  "mail": {
+    "subject": "Сообщение с сайта-портфолио",
+    "smtp": {
+      "host": "smtp.gmail.com",
+      "port": 465,
+      "secure": true,
+      "auth": {
+          "user": "example@example.com",
+          "pass": "example"
+      }
+    }
+  }
+}

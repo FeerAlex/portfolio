@@ -80,7 +80,7 @@ $(document).ready(function() {
 
 import Request from '../../components/modules/sendAuth';
 let form = $('form');
-let url = 'submit_test.php';
+let url = '/login';
 let submit = new Request(form, url);
 form.on('submit', function(e) {
   e.preventDefault();

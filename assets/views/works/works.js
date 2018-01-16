@@ -27,13 +27,12 @@ let slider = new Slider();
 let wrapper = document.querySelector('#wrapper');
 let main = document.querySelector('.main');
 let blurJs = document.querySelector('.blur');
+let slideShow = document.querySelector('.work__slider');
 
 wrapper.insertBefore(header.elem, main);
 blurJs.appendChild(footer.elem);
-document.querySelector('.work__slider').appendChild(slider.elem);
-
-console.log('in works.js');
-
+slideShow.appendChild(slider.elem);
+slider.download();
 
 let blur = (function() {
   let wrapper = document.querySelector('.js-feedback'),
@@ -69,13 +68,12 @@ blurArrow.onclick = (e) => {
 let preloader = new Preloader();
 
 $(document).ready(function() {
-  console.log('ready!');
   preloader.init();
 });
 
 import Request from '../../components/modules/sendMessage';
 let form = $('form');
-let url = 'submit_test.php';
+let url = '/works/message';
 let submit = new Request(form, url);
 form.on('submit', function(e) {
   e.preventDefault();
