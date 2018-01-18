@@ -24,6 +24,7 @@ module.exports = {
       if(body.status === 'err') {
         return res.json({status: 'error', message: body.message});
       }
+
       req.session.isAdmin = true;
       res.redirect('/admin');
     });

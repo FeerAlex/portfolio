@@ -21,7 +21,7 @@ const isAdmin = (req, res, next) => {
   res.redirect('/');
 };
 
-app.set('views', path.join(__dirname, 'build'));
+app.set('views', [__dirname + '/build', '../admin']);
 app.set('view engine', 'html');
 app.engine('html', require('hbs').__express);
 
@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/', express.static(path.join(__dirname, 'build')));
 app.use('/', express.static(path.join(__dirname, 'upload')));
-app.use('/', express.static(path.join(__dirname, 'admin')));
+app.use('/', express.static(path.resolve(__dirname, '../admin')));
 
 app.use(session({
   secret: 'loftschool',

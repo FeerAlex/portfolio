@@ -67,9 +67,9 @@ export default class Request {
     var result = $.ajax({
       url: url,
       type: 'POST',
-      dataType: 'json',
+      dataType: 'text',
       data: data,
-    }).fail(function() {
+    }).fail(function(ans) {
       Request.message.text('Ошибка сервера');
       Request.message.show();
     });
@@ -84,10 +84,7 @@ export default class Request {
     if(serverAnswer) {
       serverAnswer.done(function(ans) {
         
-        if(ans.status === 'ok') {
-          Request.message.text(ans.message);
-          Request.message.show();
-        } else {
+        if(ans.status === 'error') {
           Request.message.text(ans.message);
           Request.message.show();
         }
