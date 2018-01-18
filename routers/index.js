@@ -25,6 +25,6 @@ router.get('/about', about.getPage);
 
 router.get('/blog', blog.getPage);
 
-router.get('/admin', admin.getPage);
+router.get('/admin', isAdmin, admin.getPage);
 
 module.exports = router;

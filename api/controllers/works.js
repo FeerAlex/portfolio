@@ -14,7 +14,7 @@ module.exports = {
 
   createWork: (req, res) => {
     let form = new formidable.IncomingForm();
-    let upload = 'upload/';
+    let upload = 'upload';
     let filename;
 
     if(!fs.existsSync(upload)) {
@@ -22,7 +22,6 @@ module.exports = {
     }
 
     form.uploadDir = path.join(process.cwd(), upload);
-	console.log(form.uploadDir);
 
     form.parse(req, function(err, fields, files) {
       if(err) {
