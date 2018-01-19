@@ -26,7 +26,7 @@ module.exports = {
       }
 
       req.session.isAdmin = true;
-      res.redirect('/admin');
+      return res.json({status: 'ok', message: body.message});
     });
   },
 };

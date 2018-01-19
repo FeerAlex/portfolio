@@ -67,7 +67,7 @@ export default class Request {
     var result = $.ajax({
       url: url,
       type: 'POST',
-      dataType: 'text',
+      dataType: 'json',
       data: data,
     }).fail(function(ans) {
       Request.message.text('Ошибка сервера');
@@ -84,9 +84,15 @@ export default class Request {
     if(serverAnswer) {
       serverAnswer.done(function(ans) {
         
-        if(ans.status === 'error') {
+        if(ans.status === 'ok') {
           Request.message.text(ans.message);
           Request.message.show();
+          window.location = '/admin';
+        } else {
+          if(ans.status === 'error') {
+            Request.message.text(ans.message);
+            Request.message.show();
+          }
         }
       });
     }
