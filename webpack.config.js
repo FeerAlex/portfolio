@@ -43,7 +43,7 @@ module.exports = {
   devtool: dev ? 'inline-cheap-module-source-map' : '(none)',
   output: {
     path: PATHS.build,
-    filename: prod ? '/js/[name].min.js' : '/js/[name].js',
+    filename: prod ? './js/[name].min.js' : './js/[name].js',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -66,7 +66,7 @@ module.exports = {
       chunks: ['works', 'common'],
       template: PATHS.source + '/views/works/works.pug',
     }),
-    new ExtractTextPlugin('/css/[name].css'),
+    new ExtractTextPlugin('./css/[name].css'),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common',
     }),
