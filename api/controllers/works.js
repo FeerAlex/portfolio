@@ -41,7 +41,7 @@ module.exports = {
         if(err) {
           console.log(err);
           fs.unlink(filename);
-          fs.rename(files.photo.path, filename);
+          fs.rename(files.image.path, filename);
         }
       });
 

@@ -29,4 +29,9 @@ module.exports = {
       return res.json({status: 'ok', message: body.message});
     });
   },
+
+  logout: (req, res) => {
+    req.session.destroy();
+    res.redirect('/');
+  },
 };

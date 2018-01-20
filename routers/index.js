@@ -17,6 +17,7 @@ const isAdmin = (req, res, next) => {
 
 router.get('/', welcome.getPage);
 router.post('/login', welcome.auth);
+router.get('/logout', welcome.logout);
 
 router.get('/works', works.getPage);
 router.post('/works/message', works.sendMail);
