@@ -24,7 +24,7 @@ module.exports = {
 
     console.log(item);
 
-    item.save().then(item => {
+    item.save().then(() => {
       return res.status(201).json({message: 'Запись успешно добавлена'});
     }).catch(err => {
       res.status(400).json({

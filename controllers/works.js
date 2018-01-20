@@ -21,7 +21,7 @@ module.exports = {
         .trim()
         .slice(0, 500) + `\n\nОтправлено с: <${req.body.email}>`,
     };
-    transporter.sendMail(mailOptions, function (error, info) {
+    transporter.sendMail(mailOptions, function (error) {
       if (error) {
         return res.json({status: 'error', message: 'Произошла ошибка на сервере'});
       }

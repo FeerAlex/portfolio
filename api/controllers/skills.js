@@ -19,7 +19,7 @@ module.exports = {
       percents: req.body.percents,
     });
 
-    item.save().then(item => {
+    item.save().then(() => {
       return res.status(201).json({message: 'Скил успешно добавлен'});
     }).catch(err => {
       res.status(400).json({

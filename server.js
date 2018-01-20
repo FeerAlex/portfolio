@@ -13,14 +13,6 @@ const mongoose     = require('mongoose');
 const session      = require('express-session');
 const MongoStore   = require('connect-mongo')(session);
 
-const isAdmin = (req, res, next) => {
-  if(req.session.isAdmin) {
-    return next();
-  }
-  
-  res.redirect('/');
-};
-
 app.set('views', [__dirname + '/build', '../admin']);
 app.set('view engine', 'html');
 app.engine('html', require('hbs').__express);

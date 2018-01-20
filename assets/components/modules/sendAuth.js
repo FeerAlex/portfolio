@@ -69,7 +69,7 @@ export default class Request {
       type: 'POST',
       dataType: 'json',
       data: data,
-    }).fail(function(ans) {
+    }).fail(function() {
       Request.message.text('Ошибка сервера');
       Request.message.show();
     });

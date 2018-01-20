@@ -54,7 +54,7 @@ module.exports = {
         picture: filename,
       });
 
-      item.save().then(item => {
+      item.save().then(() => {
         return res.status(201).json({message: 'Запись успешно добавлена'});
       }).catch(err => {
         console.log('При добавлении записи произошла ошибка');
