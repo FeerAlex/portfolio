@@ -34,8 +34,7 @@ module.exports = {
       // return res.redirect('/admin?msgfile=Заполнены не все поля');
       }
 
-      // filename = path.join(upload, files.image.name);
-      filename = files.image.name;
+      filename = path.join(upload, files.image.name);
 
       fs.rename(files.image.path, filename, function(err) {
         if(err) {
