@@ -14,7 +14,7 @@ module.exports = {
 
   createWork: (req, res) => {
     let form = new formidable.IncomingForm();
-    let upload = 'public/works';
+    let upload = 'upload';
     let filename;
 
     if(!fs.existsSync(upload)) {
@@ -34,7 +34,8 @@ module.exports = {
       // return res.redirect('/admin?msgfile=Заполнены не все поля');
       }
 
-      filename = path.join(upload, files.image.name);
+      // filename = path.join(upload, files.image.name);
+      filename = files.image.name;
 
       fs.rename(files.image.path, filename, function(err) {
         if(err) {
